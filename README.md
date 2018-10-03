@@ -1,24 +1,37 @@
-# README
+# SSDP Chapter Activity Tracker (CAT) v4.0.0
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This time, in *rails*.
 
-Things you may want to cover:
+We built up the third version of the CAT in Flask, before I really understood how MVC worked, what web frameworks were for, and some other best practices.
 
-* Ruby version
+Since launch, CATv3 has run into a ton of predictable problems which would be completely solved had it been built properly, which I can accomplish quickly and to a higher degree of excellence in Rails.
 
-* System dependencies
+So CATv4 will be a quick rebuild in Rails, and should be the final application moving forward.
 
-* Configuration
+## Index
+[Heroku link]()
+[Ruby version](#ruby-version)
+[System dependences](#system-dependencies)
+[Configuration](#configurate)
+[Database creation](#database-creation)
+[Database initialization](#database-initialization)
+[How to run the test suite](#how-to-run-the-test-suite)
+[Services](#services)
+[Deployment instructions](#deployment-instructions)
 
-* Database creation
+## Ruby version
 
-* Database initialization
+## System dependencies
 
-* How to run the test suite
+## Configuration
 
-* Services (job queues, cache servers, search engines, etc.)
+## Database creation
 
-* Deployment instructions
+## Database initialization
 
-* ...
+## How to run the test suite
+
+## Services
+(job queues, cache servers, search engines, etc.)
+
+## Deployment instructions
