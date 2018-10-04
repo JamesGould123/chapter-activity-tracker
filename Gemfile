@@ -32,6 +32,12 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Use Bootstrap 4
+gem 'bootstrap', '~> 4.1.3'
+
+# Use jQuery for Bootstrap
+gem 'jquery-rails'
+
 group :production do
   gem 'pg'
 end
