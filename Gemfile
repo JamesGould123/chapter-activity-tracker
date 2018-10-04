@@ -38,6 +38,9 @@ gem 'bootstrap', '~> 4.1.3'
 # Use jQuery for Bootstrap
 gem 'jquery-rails'
 
+# Use Devise for authentication and authorization
+gem 'devise'
+
 group :production do
   gem 'pg'
 end
