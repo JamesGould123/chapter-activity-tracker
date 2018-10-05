@@ -89,69 +89,69 @@ Category.create!(
   default_points: 10
 )
 Category.create!(
-  name: "Table on campus",
-  desc: "Set up a table on campus.",
-  default_points: 5
+  name: "Secure/maintain faculty adviser ",
+  desc: "You earn 10 points for this each semester.",
+  default_points: 10
+)
+Category.create!(
+  name: "Build/maintain relationships with other orgs on campus",
+  desc: "10 points per org per semester.",
+  default_points: 10
+)
+Category.create!(
+  name: "Host regular meetings, at least twice a month",
+  desc: "15 points per semester.",
+  default_points: 15
+)
+Category.create!(
+  name: "Recruit and train next chapter President",
+  desc: "",
+  default_points: 30
+)
+Category.create!(
+  name: "Successfully fundraise",
+  desc: "1 point per $10 raised",
+  default_points: 1
+)
+Category.create!(
+  name: "Positive quote/media hit",
+  desc: "Someone from your chapter is quoted or your chapter is mentioned in a news article. Send the media source to your outreach coordinator to receive these points. Please attach the media link in the notes of your points submission.",
+  default_points: 10
+)
+Category.create!(
+  name: "Submit content for blog",
+  desc: "Send a draft of the blog post to outreach@ssdp.org and an outreach coordinator will get back to you in 24 hours.",
+  default_points: 15
+)
+Category.create!(
+  name: "Translate an item for SSDP’s website into a non-english language",
+  desc: "15 points per 750 words",
+  default_points: 15
+)
+Category.create!(
+  name: "Refer a friend",
+  desc: "Love SSDP? Want to spread that love to other schools? If you know students at a school where there is no SSDP chapter, ask them to start one using our google form. Make sure when they fill out the new chapter application that they list you in how they heard about SSDP. An Outreach Coordinator will add these points when we receive the chapter application.",
+  default_points: 10
+)
+Category.create!(
+  name: "Take a picture with donor sheets and send to your Outreach coordinator",
+  desc: "Follow the instructions on your donor thank you sheet (from your care package or found here) and send a picture of your chapter to your Outreach Coordinator.",
+  default_points: 10
+)
+Category.create!(
+  name: "Fill out the SSDP Membership Survey",
+  desc: "3 points per member of your chapter that fills out the SSDP membership survey.",
+  default_points: 3
+)
+Category.create!(
+  name: "Submit case study",
+  desc: "The case study template is here. You can submit a case study for any Policy Change action that was successfully implemented, or that was initiated and may have failed",
+  default_points: 50
 )
 Category.create!(
   name: "Table on campus",
-  desc: "Set up a table on campus to pass out information related to SSDP and recruit potential new members.",
-  default_points: 5
-)
-Category.create!(
-  name: "Table on campus",
-  desc: "Set up a table on campus to pass out information related to SSDP and recruit potential new members.",
-  default_points: 5
-)
-Category.create!(
-  name: "Table on campus",
-  desc: "Set up a table on campus to pass out information related to SSDP and recruit potential new members.",
-  default_points: 5
-)
-Category.create!(
-  name: "Table on campus",
-  desc: "Set up a table on campus to pass out information related to SSDP and recruit potential new members.",
-  default_points: 5
-)
-Category.create!(
-  name: "Table on campus",
-  desc: "Set up a table on campus to pass out information related to SSDP and recruit potential new members.",
-  default_points: 5
-)
-Category.create!(
-  name: "Table on campus",
-  desc: "Set up a table on campus to pass out information related to SSDP and recruit potential new members.",
-  default_points: 5
-)
-Category.create!(
-  name: "Table on campus",
-  desc: "Set up a table on campus to pass out information related to SSDP and recruit potential new members.",
-  default_points: 5
-)
-Category.create!(
-  name: "Table on campus",
-  desc: "Set up a table on campus to pass out information related to SSDP and recruit potential new members.",
-  default_points: 5
-)
-Category.create!(
-  name: "Table on campus",
-  desc: "Set up a table on campus to pass out information related to SSDP and recruit potential new members.",
-  default_points: 5
-)
-Category.create!(
-  name: "Table on campus",
-  desc: "Set up a table on campus to pass out information related to SSDP and recruit potential new members.",
-  default_points: 5
-)
-Category.create!(
-  name: "Table on campus",
-  desc: "Set up a table on campus to pass out information related to SSDP and recruit potential new members.",
-  default_points: 5
-)
-Category.create!(
-  name: "Table on campus",
-  desc: "Set up a table on campus to pass out information related to SSDP and recruit potential new members.",
-  default_points: 5
+  desc: "The case study template is here. You can submit a case study for any Policy Change action that was successfully implemented, or that was initiated and may have failed",
+  default_points: 50
 )
 Category.create!(
   name: "Table on campus",
