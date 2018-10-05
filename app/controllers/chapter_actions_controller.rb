@@ -15,6 +15,7 @@ class ChapterActionsController < ApplicationController
   # GET /chapter_actions/new
   def new
     @chapter_action = ChapterAction.new
+    @categories = Category.all.map { |c| [c.name, c.id]}
   end
 
   # GET /chapter_actions/1/edit
