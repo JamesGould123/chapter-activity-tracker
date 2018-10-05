@@ -1,24 +1,24 @@
 <nav class="navbar navbar-expand-lg navbar-light">
-    <section class="container">
-        <a class="navbar-brand" href="/"><%= image_tag("SSDP20-logo-transparent.png", class: "img-fluid", style: "width: 70px;") %></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-item nav-link" href="#">Chapters</a>
-                <a class="nav-item nav-link" href="#">Leaderboard</a>
-                <a class="nav-item nav-link" href="#">Available Activities</a>
-                <%= link_to('Store', faq_path, class: "nav-item nav-link") %>
-                <%= link_to('Store', store_path, class: "nav-item nav-link") %>
-                <a class="nav-item nav-link" href="#">Stats</a>
-                <% if user_signed_in? %>
-                <a class="nav-item nav-link" href="#">Control Panel</a>
-                <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "nav-item nav-link") %>
-                <% else %>
-                <%= link_to('Login', new_user_session_path, class: "nav-item nav-link")  %>
-                <% end %>
-            </div>
+  <section class="container">
+    <a class="navbar-brand" href="/"><%= image_tag("SSDP20-logo-transparent.png", class: "img-fluid", style: "width: 70px;") %></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <%= link_to('Chapters', chapters_path, class: "nav-item nav-link") %>
+        <a class="nav-item nav-link" href="#">Leaderboard</a>
+        <a class="nav-item nav-link" href="#">Available Activities</a>
+        <%= link_to('Store', faq_path, class: "nav-item nav-link") %>
+        <%= link_to('Store', store_path, class: "nav-item nav-link") %>
+        <a class="nav-item nav-link" href="#">Stats</a>
+        <% if user_signed_in? %>
+          <a class="nav-item nav-link" href="#">Control Panel</a>
+          <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "nav-item nav-link") %>
+        <% else %>
+          <%= link_to('Login', new_user_session_path, class: "nav-item nav-link") %>
+        <% end %>
+      </div>
     </section>
-    </div>
+  </div>
 </nav>
