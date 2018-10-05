@@ -12,12 +12,10 @@
                 <%= link_to('Store', faq_path, class: "nav-item nav-link") %>
                 <%= link_to('Store', store_path, class: "nav-item nav-link") %>
                 <a class="nav-item nav-link" href="#">Stats</a>
-                <!-- These items only appear if people are logged in -->
                 <% if user_signed_in? %>
                 <a class="nav-item nav-link" href="#">Control Panel</a>
                 <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "nav-item nav-link") %>
                 <% else %>
-                <!-- If the user isn't logged in, display a link to do so -->
                 <%= link_to('Login', new_user_session_path, class: "nav-item nav-link")  %>
                 <% end %>
             </div>
