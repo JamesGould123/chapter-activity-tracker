@@ -149,9 +149,9 @@ Category.create!(
   default_points: 50
 )
 Category.create!(
-  name: "Table on campus",
-  desc: "The case study template is here. You can submit a case study for any Policy Change action that was successfully implemented, or that was initiated and may have failed",
-  default_points: 50
+  name: "Register voters",
+  desc: "1 point per voter registered",
+  default_points: 1
 )
 Category.create!(
   name: "Table on campus",
