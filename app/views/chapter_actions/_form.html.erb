@@ -12,11 +12,8 @@
   <% end %>
 
   <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Select one!") %>
-  
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id, id: :chapter_action_user_id %>
-  </div>
+  <%= select_tag(:user_id, options_for_select(@users), :prompt => "Select one!") %>
+
 
   <div class="field">
     <%= form.label :points %>

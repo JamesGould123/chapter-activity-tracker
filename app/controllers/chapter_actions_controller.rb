@@ -16,17 +16,22 @@ class ChapterActionsController < ApplicationController
   def new
     @chapter_action = ChapterAction.new
     @categories = Category.all.map { |c| [c.name, c.id]}
+    @users = User.all.map { |u| [u.name, u.id] }
   end
 
   # GET /chapter_actions/1/edit
   def edit
+    @categories = Category.all.map{|c| [ c.name, c.id ] }
+    @users = User.all.map { |u| [u.name, u.id] }
+
   end
 
   # POST /chapter_actions
   # POST /chapter_actions.json
   def create
     @chapter_action = ChapterAction.new(chapter_action_params)
-
+    @chapter_action.category_id = params[:category_id]
+    @chapter_action.user_id = params[:user_id]
     respond_to do |format|
       if @chapter_action.save
         format.html { redirect_to @chapter_action, notice: 'Chapter action was successfully created.' }
@@ -42,6 +47,7 @@ class ChapterActionsController < ApplicationController
   # PATCH/PUT /chapter_actions/1.json
   def update
     respond_to do |format|
+      @chapter_action.category_id = params[:category_id]
       if @chapter_action.update(chapter_action_params)
         format.html { redirect_to @chapter_action, notice: 'Chapter action was successfully updated.' }
         format.json { render :show, status: :ok, location: @chapter_action }
