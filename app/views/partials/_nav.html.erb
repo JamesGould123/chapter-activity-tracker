@@ -9,14 +9,17 @@
                 <a class="nav-item nav-link" href="#">Chapters</a>
                 <a class="nav-item nav-link" href="#">Leaderboard</a>
                 <a class="nav-item nav-link" href="#">Available Activities</a>
-                <a class="nav-item nav-link" href="#">How-to/FAQ</a>
-                <a class="nav-item nav-link" href="#">Store</a>
+                <%= link_to('Store', faq_path, class: "nav-item nav-link") %>
+                <%= link_to('Store', store_path, class: "nav-item nav-link") %>
                 <a class="nav-item nav-link" href="#">Stats</a>
                 <!-- These items only appear if people are logged in -->
+                <% if user_signed_in? %>
                 <a class="nav-item nav-link" href="#">Control Panel</a>
-                <a class="nav-item nav-link" href="#">Log Out</a>
+                <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "nav-item nav-link") %>
+                <% else %>
                 <!-- If the user isn't logged in, display a link to do so -->
-                <a class="nav-item nav-link" href="#">Log In</a>
+                <%= link_to('Login', new_user_session_path, class: "nav-item nav-link")  %>
+                <% end %>
             </div>
     </section>
     </div>
