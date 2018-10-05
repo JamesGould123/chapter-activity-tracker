@@ -7,4 +7,7 @@ class StaticPagesController < ApplicationController
 
   def store
   end
+
+  def control_panel
+  end
 end

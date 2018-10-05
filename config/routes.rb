@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   get '/faq',                  to: 'static_pages#faq'
   get '/store',                to: 'static_pages#store'
+  get '/control-panel',        to: 'static_pages#control_panel'
   get '/chapters/',            to: 'chapters#index'
   get '/chapters/:id',         to: 'chapters#show'
   get '/leaderboard',          to: 'chapters#leaderboard'
