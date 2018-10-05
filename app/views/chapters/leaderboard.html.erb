@@ -1,7 +1,6 @@
 <div class="row">
   <div class="col">
     <h1>Chapters</h1>
-    <%= will_paginate @users %>
     <% @users.each do |user| %>
       <% if user.permissions == "chapter" %>
         <article class="post">

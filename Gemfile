@@ -41,6 +41,9 @@ gem 'jquery-rails'
 # Use Devise for authentication and authorization
 gem 'devise'
 
+# Use will paginate 4 for pagination
+gem 'will_paginate-bootstrap4'
+
 group :production do
   gem 'pg'
 end

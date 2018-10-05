@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
 
   root to: 'chapter_actions#index'
+  get '/leaderboard',          to: 'chapters#leaderboard'
   get '/faq',                  to: 'static_pages#faq'
   get '/store',                to: 'static_pages#store'
   get '/chapters/',            to: 'chapters#index'
