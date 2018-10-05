@@ -18,11 +18,13 @@
         <td><%= category.name %></td>
         <td><%= category.desc %></td>
         <td><%= category.default_points %></td>
+        <% if user_signed_in? %>
         <% if current_user.permissions == "administrator" %>
 
         <td><%= link_to 'Show', category %></td>
         <td><%= link_to 'Edit', edit_category_path(category) %></td>
         <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
         <% end %>
       </tr>
     <% end %>
@@ -46,18 +48,21 @@
         <td><%= category.name %></td>
         <td><%= category.desc %></td>
         <td><%= category.default_points %></td>
+        <% if user_signed_in? %>
         <% if current_user.permissions == "administrator" %>
 
         <td><%= link_to 'Show', category %></td>
         <td><%= link_to 'Edit', edit_category_path(category) %></td>
         <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 <br>
-
+<% if user_signed_in? %>
 <% if current_user.permissions == "administrator" %>
 <%= link_to 'New Category', new_category_path %>
+<% end %>
 <% end %>
