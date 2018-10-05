@@ -1,4 +1,15 @@
-<% @users.each do |user| %>
-  <%= user.name %><br />
-  <%= user.email %><br />
-<% end %>
+<div class="row">
+  <div class="col">
+    <h1>Chapters</h1>
+    <% @users.each do |user| %>
+      <% if user.permissions == "chapter" %>
+        <article class="post">
+          <div>
+            <div class="about"><%= link_to("#{user.name}", root_path) %></div>
+          </div>
+        </article>
+        <hr>
+      <% end %>
+    <% end %>
+  </div>
+</div>
