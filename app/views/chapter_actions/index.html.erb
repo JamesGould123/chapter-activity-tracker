@@ -1,31 +1,18 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Chapter Actions</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Points</th>
-      <th>Note</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="row">
+  <div class="col">
+    <h1>Activity Feed</h1>
     <% @chapter_actions.each do |chapter_action| %>
-      <tr>
-        <td><%= chapter_action.user %></td>
-        <td><%= chapter_action.points %></td>
-        <td><%= chapter_action.note %></td>
-        <td><%= link_to 'Show', chapter_action %></td>
-        <td><%= link_to 'Edit', edit_chapter_action_path(chapter_action) %></td>
-        <td><%= link_to 'Destroy', chapter_action, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Chapter Action', new_chapter_action_path %>
+      <article class="post">
+        <header>
+          <div>
+            <div class="about"><%= chapter_action.user.name %>
+              completed an action:
+              <% chapter_action.category.title %>
+              </div>
+            </div>
+          </header>
+        </article>
+      <% end %>
+    </div>
+  </div>

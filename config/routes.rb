@@ -7,7 +7,7 @@ Rails.application.routes.draw do
  }
 
 
-  root to: 'static_pages#index'
+  root to: 'chapter_actions#index'
   get '/faq',                  to: 'static_pages#faq'
   get '/store',                to: 'static_pages#store'
   get '/chapters/',            to: 'chapters#index'
