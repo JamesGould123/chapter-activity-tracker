@@ -12,6 +12,9 @@ class ChaptersController < ApplicationController
     @users = User.paginate(:page => params[:page], :per_page => 10)
   end
 
+  def stats
+  end
+
   private
 
   def get_chapter_total_points(user)
