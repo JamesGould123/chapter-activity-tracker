@@ -13,7 +13,7 @@
         <%= link_to('Store', store_path, class: "nav-item nav-link") %>
         <%= link_to('Stats', stats_path, class: "nav-item nav-link") %>
         <% if user_signed_in? %>
-          <a class="nav-item nav-link" href="#">Control Panel</a>
+        <%= link_to('Control Panel', control_panel_path, class: "nav-item nav-link") %>
           <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "nav-item nav-link") %>
         <% else %>
           <%= link_to('Login', new_user_session_path, class: "nav-item nav-link") %>
