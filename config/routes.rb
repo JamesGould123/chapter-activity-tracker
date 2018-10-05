@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :chapter_actions
   get 'chapters/index'
 
   devise_for :users, controllers: {
