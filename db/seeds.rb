@@ -209,67 +209,57 @@ Category.create!(
   default_points: 5
 )
 Category.create!(
-  name: "Table on campus",
-  desc: "Set up a table on campus to pass out information related to SSDP and recruit potential new members.",
+  name: "Do the SSDP DARE",
+  desc: "Each month SSDP’s Diversity Awareness, Reflection and Education (DARE) committee produces a newsletter called the Monthly Mosaic. Each monthly newsletter will have 1-3 SSDP DAREs, which is a challenge related to diversity and inclusion for your chapter to complete.",
+  default_points: 10
+)
+Category.create!(
+  name: "Respond to P2P Reflection Questions on a Training Curriculum module",
+  desc: "SSDP’s Peer Education Program was launched in April with the goal of empowering students with the tools and knowledge to facilitate open and honest conversation about substances and to reduce drug related harm on campus and in their communities. In order to become a certified SSDP Peer Educator, you must go through the lessons in the Training Curriculum and answer the Reflection Questions in each module. While undergoing this process is not necessary to be able to present an SSDP Just Say Know lesson (which can be found at SSDP.org/justsayknow), going through the Training Curriculum will make you much more equipped to tackle tough situations that may arise. Submit your responses here.",
+  default_points: 15
+)
+Category.create!(
+  name: "Distribute educational materials in a non-tabling setting",
+  desc: "This can mean educational materials delivered at an event or canvassing.",
   default_points: 5
 )
 Category.create!(
-  name: "Table on campus",
-  desc: "Set up a table on campus to pass out information related to SSDP and recruit potential new members.",
+  name: "Distribute harm reduction training/materials",
+  desc: "This refers to any educational materials related to harm reduction or any event that trains people on how to practice harm reduction. 1 point per person reached",
+  default_points: 1
+)
+Category.create!(
+  name: "Direct service volunteering (Assembling or distributing syringes or Naloxone kits.)",
+  desc: "This refers to assembling or distributing syringes or naloxone kits, or working directly with those impacted by the War on Drugs. 5 points per person per hour",
   default_points: 5
 )
 Category.create!(
-  name: "Table on campus",
-  desc: "Set up a table on campus to pass out information related to SSDP and recruit potential new members.",
+  name: "Host general even/tforum/debate",
+  desc: "",
+  default_points: 20
+)
+Category.create!(
+  name: "Present an SSDP Peer Education module",
+  desc: "From https://ssdp.org/justsayknow",
+  default_points: 20
+)
+Category.create!(
+  name: "Collect evaluation from SSDP Peer Education",
+  desc: "Send the evaluation to everyone who attended your JSK event to collect feedback that goes back to SSDP headquarters.",
   default_points: 5
 )
 Category.create!(
-  name: "Table on campus",
-  desc: "Set up a table on campus to pass out information related to SSDP and recruit potential new members.",
-  default_points: 5
+  name: "Submit suggestion for SSDP JSK modules on specific drugs",
+  desc: "Contact vilmarie@ssdp.org - 1 point per resource suggested.",
+  default_points: 1
 )
 Category.create!(
-  name: "Table on campus",
-  desc: "Set up a table on campus to pass out information related to SSDP and recruit potential new members.",
-  default_points: 5
+  name: "Submit suggestion for SSDP Training Curriculum",
+  desc: "Contact vilmarie@ssdp.org - 1 point per resource suggested.",
+  default_points: 1
 )
 Category.create!(
-  name: "Table on campus",
-  desc: "Set up a table on campus to pass out information related to SSDP and recruit potential new members.",
-  default_points: 5
-)
-Category.create!(
-  name: "Table on campus",
-  desc: "Set up a table on campus to pass out information related to SSDP and recruit potential new members.",
-  default_points: 5
-)
-Category.create!(
-  name: "Table on campus",
-  desc: "Set up a table on campus to pass out information related to SSDP and recruit potential new members.",
-  default_points: 5
-)
-Category.create!(
-  name: "Table on campus",
-  desc: "Set up a table on campus to pass out information related to SSDP and recruit potential new members.",
-  default_points: 5
-)
-Category.create!(
-  name: "Table on campus",
-  desc: "Set up a table on campus to pass out information related to SSDP and recruit potential new members.",
-  default_points: 5
-)
-Category.create!(
-  name: "Table on campus",
-  desc: "Set up a table on campus to pass out information related to SSDP and recruit potential new members.",
-  default_points: 5
-)
-Category.create!(
-  name: "Table on campus",
-  desc: "Set up a table on campus to pass out information related to SSDP and recruit potential new members.",
-  default_points: 5
-)
-Category.create!(
-  name: "Table on campus",
-  desc: "Set up a table on campus to pass out information related to SSDP and recruit potential new members.",
-  default_points: 5
+  name: "Create a Just Say Know Module",
+  desc: "Contact vilmarie@ssdp.org for information on how to create a Just Say Know module. ",
+  default_points: 50
 )
