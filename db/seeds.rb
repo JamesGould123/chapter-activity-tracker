@@ -154,58 +154,58 @@ Category.create!(
   default_points: 1
 )
 Category.create!(
-  name: "Table on campus",
-  desc: "Set up a table on campus to pass out information related to SSDP and recruit potential new members.",
+  name: "Make a campaign plan with your outreach coordinator",
+  desc: "We know that you, as an SSDP chapter leader, want to change drug policies and help bring the War on Drugs to an end. But you don’t have to go it alone, and we've created resources to help you make change. One of the most important components of any change-making campaign is developing a plan. We've talked about how to create a campaign plan with your Outreach Coordinator before, but have not had any formal tools to assist in the process. To make things more clear about what we mean when we say "make a plan" - we've created a template document that you your OC can fill out together, or you can fill out on your own and review with your Outreach Coordinator if preferred. Check it out here. ",
+  default_points: 15
+)
+Category.create!(
+  name: "Chapter member elected to student government",
+  desc: "",
+  default_points: 25
+)
+Category.create!(
+  name: "Collect signatures for ballot initiative",
+  desc: "5 points per person per hour.",
   default_points: 5
 )
 Category.create!(
-  name: "Table on campus",
-  desc: "Set up a table on campus to pass out information related to SSDP and recruit potential new members.",
-  default_points: 5
+  name: "Attend lobbying training",
+  desc: "This can be a training hosted by SSDP staff or a partner organization.",
+  default_points: 10
 )
 Category.create!(
-  name: "Table on campus",
-  desc: "Set up a table on campus to pass out information related to SSDP and recruit potential new members.",
-  default_points: 5
+  name: "Write and submit LTE/op-ed",
+  desc: "This can be in any campus or community media outlet.",
+  default_points: 10
 )
 Category.create!(
-  name: "Table on campus",
-  desc: "Set up a table on campus to pass out information related to SSDP and recruit potential new members.",
-  default_points: 5
+  name: "Get LTE/op-ed published",
+  desc: "This can be in any campus or community media outlet.",
+  default_points: 10
 )
 Category.create!(
-  name: "Table on campus",
-  desc: "Set up a table on campus to pass out information related to SSDP and recruit potential new members.",
-  default_points: 5
+  name: "Get politician on the record",
+  desc: "This refers to SSDP’s On the Record project. ",
+  default_points: 15
 )
 Category.create!(
-  name: "Table on campus",
-  desc: "Set up a table on campus to pass out information related to SSDP and recruit potential new members.",
-  default_points: 5
+  name: "Pass a student government resolution endorsing policy reform",
+  desc: "This can mean any relevant drug policy reform. Visit ssdp.org/campaigns for ideas!",
+  default_points: 20
 )
 Category.create!(
-  name: "Table on campus",
-  desc: "Set up a table on campus to pass out information related to SSDP and recruit potential new members.",
-  default_points: 5
+  name: "Policy changed or adopted",
+  desc: "This can refer to policy on campus or at the local, state, and federal level.",
+  default_points: 50
 )
 Category.create!(
-  name: "Table on campus",
-  desc: "Set up a table on campus to pass out information related to SSDP and recruit potential new members.",
-  default_points: 5
+  name: "Research one campus for the SSDP Campus Policy Gradebook",
+  desc: "The purpose of the Gradebook is to assess the campus policies and philosophy surrounding the use of various substances on campus and in the campus community. This gradebook is a resource for students. It serves as a guide for SSDP chapters who are interested in engaging in policy change at the campus level. In addition, when published in the Spring of 2017, the Gradebook will serve as a source of information for incoming college and university students who are weighing the decision of what school to attend. Under the Campus Policy Grading Rubric, there are 100 points possible. Schools with sensible policies, a philosophy of response which does not include inflexible prohibition, stigmatization, and punishment, which provide accurate drug education and information; who promote a culture of openness and accessibility to harm reduction practices & services receive higher score. Please review the instructions for the Gradebook here, and we will award you points when we've confirmed your submission.",
+  default_points: 30
 )
 Category.create!(
-  name: "Table on campus",
-  desc: "Set up a table on campus to pass out information related to SSDP and recruit potential new members.",
-  default_points: 5
-)
-Category.create!(
-  name: "Table on campus",
-  desc: "Set up a table on campus to pass out information related to SSDP and recruit potential new members.",
-  default_points: 5
-)
-Category.create!(
-  name: "Table on campus",
-  desc: "Set up a table on campus to pass out information related to SSDP and recruit potential new members.",
+  name: "Policy Change Volunteering",
+  desc: "This category is meant to describe any amount of time spent doing policy change work that is not otherwise captured in another category. For example, if you put on a campaign themed event, protest, or rally, please use that category. But if someone on SSDP staff asked you to do some policy research for a lobby day, or if you spent time doing other similar work not captured in another category, please record your time using this category. 5 points per person per hour.",
   default_points: 5
 )
 Category.create!(
