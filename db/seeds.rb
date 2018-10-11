@@ -41,6 +41,18 @@ User.create!(name:  "Example Admin",
 
 end
 
+Bucket.create!(
+  name: "Chapter Building"
+)
+
+Bucket.create!(
+  name: "Policy Change"
+)
+
+Bucket.create!(
+  name: "Training and Education"
+)
+
 Category.create!(
   name: "Table on campus",
   desc: "Set up a table on campus to pass out information related to SSDP and
