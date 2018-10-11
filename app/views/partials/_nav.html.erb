@@ -12,12 +12,13 @@
         <%= link_to('How-to/FAQ', faq_path, class: "nav-item nav-link") %>
         <%= link_to('Store', store_path, class: "nav-item nav-link") %>
         <%= link_to('Stats', stats_path, class: "nav-item nav-link") %>
+
+        <% if user_signed_in? %>
         <% if user_is_admin? %>
         <%= link_to('Control Panel', control_panel_path, class: "nav-item nav-link") %>
         <% else %>
         <%= link_to('Log Points', new_chapter_action_path, class: "nav-item nav-link") %>
         <% end %>
-        <% if user_signed_in? %>
           <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "nav-item nav-link") %>
         <% else %>
           <%= link_to('Login', new_user_session_path, class: "nav-item nav-link") %>

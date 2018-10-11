@@ -1,31 +1,36 @@
 <%= form_with(model: chapter_action, local: true) do |form| %>
-  <% if chapter_action.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(chapter_action.errors.count, "error") %> prohibited this chapter_action from being saved:</h2>
+<% if chapter_action.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(chapter_action.errors.count, "error") %>
+      prohibited this chapter_action from being saved:</h2>
 
-      <ul>
+    <ul>
       <% chapter_action.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Log an activity", :class => "form-control") %>
-  <%= select_tag(:user_id, options_for_select(@users), :prompt => "Select one!", :class => "form-control") %>
-
-
-  <div class="field">
-    <%= form.label :points %>
-    <%= form.number_field :points, id: :chapter_action_points, :class => "form-control" %>
+    </ul>
   </div>
+<% end %>
 
-  <div class="field">
-    <%= form.label :note %>
-    <%= form.text_area :note, id: :chapter_action_note, :class => "form-control" %>
-  </div>
+<%= select_tag(:category_id, options_for_select(@categories), :prompt => "Select an activity", :class => "form-control") %>
 
-  <div class="actions">
-    <%= form.submit :class => "form-control"%>
-  </div>
+<% if user_is_chapter? %>
+  <%= form.hidden_field :user_id, id: :user_id, :value => current_user.id %>
+<% else %>
+  <%= select_tag(:user_id, options_for_select(@users), :prompt => "Select a chapter!", :class => "form-control") %>
+<% end %>
+
+<div class="field">
+  <%= form.label :points %>
+  <%= form.number_field :points, id: :chapter_action_points, :class => "form-control" %>
+</div>
+
+<div class="field">
+  <%= form.label :note %>
+  <%= form.text_area :note, id: :chapter_action_note, :class => "form-control" %>
+</div>
+
+<div class="actions">
+  <%= form.submit :class => "form-control"%>
+</div>
 <% end %>

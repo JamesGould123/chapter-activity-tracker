@@ -29,6 +29,8 @@ class ChapterActionsController < ApplicationController
   # POST /chapter_actions
   # POST /chapter_actions.json
   def create
+    @categories = Category.all.map{|c| [ c.name, c.id ] }
+
     @chapter_action = ChapterAction.new(chapter_action_params)
     @chapter_action.category_id = params[:category_id]
     @chapter_action.user_id = params[:user_id]
@@ -72,6 +74,8 @@ class ChapterActionsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_chapter_action
       @chapter_action = ChapterAction.find(params[:id])
+      @categories = Category.all.map { |c| [c.name, c.id]}
+
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
