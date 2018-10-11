@@ -30,7 +30,7 @@ User.create!(name:  "Example Admin",
 
 
 99.times do |n|
-  name  = "Chapter"
+  name  = "Chapter#{n+1}"
   email = "chapter-#{n+1}@aaassdp.org"
   password = "password"
   User.create!(name:  name,
