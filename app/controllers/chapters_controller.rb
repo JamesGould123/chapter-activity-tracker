@@ -14,6 +14,7 @@ class ChaptersController < ApplicationController
 
   def stats
     @actions = ChapterAction.all
+    @categories = Category.all
   end
 
   private

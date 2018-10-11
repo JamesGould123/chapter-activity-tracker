@@ -41,12 +41,13 @@
   </table>
   <h1>Completed Activities</h1>
   <table class="table">
-    {% for activity in activities %}
+    <% @categories.each do |category| %>
       <tr>
         <td>
-          <a href="{{url_for('blog.activity', id=activity['id']) }}">{{activity.title}}</a>
+          <a href=""><%= category.name %></a>
         </td>
         <td>{{activity_count[activity.title]}}</td>
       </tr>
+      <% end %>
     </table>
   </div>
