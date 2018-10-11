@@ -4,4 +4,16 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :chapter_actions
+
+  def is_hq_cb?
+  end
+
+  def is_hq_pc?
+  end
+
+  def is_hq_te?
+  end
+
+  def is_hq?
+  end
 end

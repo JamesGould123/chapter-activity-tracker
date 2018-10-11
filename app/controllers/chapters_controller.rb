@@ -17,6 +17,11 @@ class ChaptersController < ApplicationController
     @cb_points = 0
     @pc_points = 0
     @te_points = 0
+    @hq_cb = 0
+    @hq_pc = 0
+    @hq_te = 0
+    @hq = 0 
+    @users = User.all
     @actions.each do |action|
       case Category.find(action.category_id).bucket_id
       when 1
