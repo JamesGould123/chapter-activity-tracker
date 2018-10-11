@@ -15,5 +15,10 @@
   <%= @category.default_points %>
 </p>
 
+<p>
+  <strong>Bucket:</strong>
+  <%= Bucket.find(@category.bucket_id).name %>
+</p>
+
 <%= link_to 'Edit', edit_category_path(@category) %> |
 <%= link_to 'Back', categories_path %>
