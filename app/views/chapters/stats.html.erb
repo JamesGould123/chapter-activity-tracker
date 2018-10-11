@@ -16,7 +16,7 @@
     </tr>
     <tr>
       <td>Total Earned</td>
-      <td>{{points['total']}}</td>
+      <td><%= @actions.sum("points") %></td>
     </tr>
     <tr>
       <td>Total Spent</td>

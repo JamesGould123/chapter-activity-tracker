@@ -13,6 +13,7 @@ class ChaptersController < ApplicationController
   end
 
   def stats
+    @actions = ChapterAction.all
   end
 
   private
