@@ -15,7 +15,7 @@
 <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Select an activity", :class => "form-control") %>
 
 <% if user_is_chapter? %>
-  <%= form.hidden_field :user_id, id: :user_id, :value => current_user.id %>
+  <%= hidden_field_tag "user_id", value = current_user.id %>
 <% else %>
   <%= select_tag(:user_id, options_for_select(@users), :prompt => "Select a chapter!", :class => "form-control") %>
 <% end %>

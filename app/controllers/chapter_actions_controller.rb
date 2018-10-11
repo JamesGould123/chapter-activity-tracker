@@ -23,7 +23,6 @@ class ChapterActionsController < ApplicationController
   def edit
     @categories = Category.all.map{|c| [ c.name, c.id ] }
     @users = User.all.map { |u| [u.name, u.id] }
-
   end
 
   # POST /chapter_actions
