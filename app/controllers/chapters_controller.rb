@@ -34,14 +34,20 @@ class ChaptersController < ApplicationController
         @te_points = @pc_points + action.points
       end
     end
-
-    @users.each do |user|
-      @hq_cb = @hq_cb + 1 if user.is_hq_cb?
-      @hq_pc = @hq_pc + 1 if user.is_hq_pc?
-      @hq_te = @hq_te + 1 if user.is_hq_te?
-      @hq = @hq + 1 if user.is_hq?
+    @users.each do |u|
+      if u.is_hq_cb?
+        @hq_cb +=1
+      end
+      if u.is_hq_pc?
+        @hq_pc +=1
+      end
+      if u.is_hq_te?
+        @hq_te +=1
+      end
+      if u.is_hq?
+        @hq += 1
+      end
     end
-
   end
 
   private
