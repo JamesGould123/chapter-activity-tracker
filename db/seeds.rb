@@ -7,14 +7,14 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create!(name:  "Example Chapter",
-             email: "chapter1@chapters.dddssdp.org",
+             email: "chapter1@chapters.ssdp.org",
              password:              "foobar",
              password_confirmation: "foobar",
              permissions:           "chapter")
 
 
 User.create!(name:  "Example Staffer",
-            email: "staff1@sscccdp.org",
+            email: "staff@ssdp.org",
             password:              "foobar",
             password_confirmation: "foobar",
             permissions:           "staffer")
@@ -22,7 +22,7 @@ User.create!(name:  "Example Staffer",
 
 
 User.create!(name:  "Example Admin",
-             email: "admin1@bbbssdp.org",
+             email: "admin@ssdp.org",
              password:              "foobar",
              password_confirmation: "foobar",
              permissions:           "administrator")
@@ -31,7 +31,7 @@ User.create!(name:  "Example Admin",
 
 99.times do |n|
   name  = "Chapter#{n+1}"
-  email = "chapter-#{n+1}@aaassdp.org"
+  email = "chapter-#{n+1}@chapters.ssdp.org"
   password = "password"
   User.create!(name:  name,
               email: email,
