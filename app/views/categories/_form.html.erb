@@ -26,6 +26,11 @@
     <%= form.number_field :default_points, id: :category_default_points, :class => "form-control" %>
   </div>
 
+  <div class="field">
+    <%= form.label :bucket_id %>
+    <%= form.select(:bucket_id, options_for_select(@buckets), :prompt => "Select a bucket", :class => "form-control") %>
+  </div>
+
   <div class="actions">
     <%= form.submit :class => "form-control" %>
   </div>
