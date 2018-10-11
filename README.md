@@ -9,15 +9,15 @@ Since launch, CATv3 has run into a ton of predictable problems which would be co
 So CATv4 will be a quick rebuild in Rails, and should be the final application moving forward.
 
 ## Index
-[Heroku link](https://ssdp-cat.herokuapp.com/)
-[Ruby version](#ruby-version)
-[System dependences](#system-dependencies)
-[Configuration](#configurate)
-[Database creation](#database-creation)
-[Database initialization](#database-initialization)
-[How to run the test suite](#how-to-run-the-test-suite)
-[Services](#services)
-[Deployment instructions](#deployment-instructions)
+- [Heroku link](https://ssdp-cat.herokuapp.com/)
+- [Ruby version](#ruby-version)
+- [System dependences](#system-dependencies)
+- [Configuration](#configurate)
+- [Database creation](#database-creation)
+- [Database initialization](#database-initialization)
+- [How to run the test suite](#how-to-run-the-test-suite)
+- [Services](#services)
+- [Deployment instructions](#deployment-instructions)
 
 ## Ruby version
 
