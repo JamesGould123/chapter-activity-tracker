@@ -12,17 +12,22 @@ User.create!(name:  "Example Chapter",
              password_confirmation: "foobar",
              permissions:           "chapter")
 
+
 User.create!(name:  "Example Staffer",
             email: "staff1@sscccdp.org",
             password:              "foobar",
             password_confirmation: "foobar",
             permissions:           "staffer")
 
+
+
 User.create!(name:  "Example Admin",
              email: "admin1@bbbssdp.org",
              password:              "foobar",
              password_confirmation: "foobar",
              permissions:           "administrator")
+
+
 
 99.times do |n|
   name  = "Chapter"
@@ -33,6 +38,7 @@ User.create!(name:  "Example Admin",
               password:              password,
               password_confirmation: password,
               permissions:           "chapter")
+
 end
 
 Category.create!(
