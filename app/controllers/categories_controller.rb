@@ -4,12 +4,15 @@ class CategoriesController < ApplicationController
   # GET /categories
   # GET /categories.json
   def index
-    @categories = Category.all
+    @chapter_building_categories = Category.where("bucket_id=1")
+    @policy_change_categories = Category.where("bucket_id=2")
+    @training_and_education_categories = Category.where("bucket_id=3")
   end
 
   # GET /categories/1
   # GET /categories/1.json
   def show
+
   end
 
   # GET /categories/new
