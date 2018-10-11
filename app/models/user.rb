@@ -6,14 +6,18 @@ class User < ApplicationRecord
   has_many :chapter_actions
 
   def is_hq_cb?
+    true
   end
 
   def is_hq_pc?
+    true
   end
 
   def is_hq_te?
+    true
   end
 
   def is_hq?
+    true
   end
 end

@@ -14,14 +14,16 @@ class ChaptersController < ApplicationController
 
   def stats
     @actions = ChapterAction.all
+    @categories = Category.all
+    @users = User.all
     @cb_points = 0
     @pc_points = 0
     @te_points = 0
     @hq_cb = 0
     @hq_pc = 0
     @hq_te = 0
-    @hq = 0 
-    @users = User.all
+    @hq = 0
+
     @actions.each do |action|
       case Category.find(action.category_id).bucket_id
       when 1
@@ -32,7 +34,14 @@ class ChaptersController < ApplicationController
         @te_points = @pc_points + action.points
       end
     end
-    @categories = Category.all
+
+    @users.each do |user|
+      @hq_cb = @hq_cb + 1 if user.is_hq_cb?
+      @hq_pc = @hq_pc + 1 if user.is_hq_pc?
+      @hq_te = @hq_te + 1 if user.is_hq_te?
+      @hq = @hq + 1 if user.is_hq?
+    end
+
   end
 
   private
