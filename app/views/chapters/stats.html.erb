@@ -46,7 +46,7 @@
         <td>
           <a href=""><%= category.name %></a>
         </td>
-        <td>{{activity_count[activity.title]}}</td>
+        <td><%= @actions.where("category_id=#{category.id}").count%></td>
       </tr>
       <% end %>
     </table>
