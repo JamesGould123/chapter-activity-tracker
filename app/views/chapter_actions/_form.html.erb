@@ -11,21 +11,21 @@
     </div>
   <% end %>
 
-  <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Select one!") %>
-  <%= select_tag(:user_id, options_for_select(@users), :prompt => "Select one!") %>
+  <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Log an activity", :class => "form-control") %>
+  <%= select_tag(:user_id, options_for_select(@users), :prompt => "Select one!", :class => "form-control") %>
 
 
   <div class="field">
     <%= form.label :points %>
-    <%= form.number_field :points, id: :chapter_action_points %>
+    <%= form.number_field :points, id: :chapter_action_points, :class => "form-control" %>
   </div>
 
   <div class="field">
     <%= form.label :note %>
-    <%= form.text_area :note, id: :chapter_action_note %>
+    <%= form.text_area :note, id: :chapter_action_note, :class => "form-control" %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit :class => "form-control"%>
   </div>
 <% end %>
