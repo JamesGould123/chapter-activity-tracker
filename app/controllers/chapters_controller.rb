@@ -29,6 +29,7 @@ class ChaptersController < ApplicationController
 
   def stats
     @actions = ChapterAction.all
+    @spendings = Spending.all
     @categories = Category.all
     @users = User.all
     @cb_points = 0

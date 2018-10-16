@@ -21,7 +21,7 @@
     </tr>
     <tr>
       <td>Total Spent</td>
-      <td>{{points['spending']}}</td>
+      <td><%= @spendings.sum("points") %></td>
     </tr>
     <tr>
       <td>High Quality Community Builders</td>
