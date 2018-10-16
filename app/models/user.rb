@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :chapter_actions
+  has_many :spendings
 
 #TODO: this should just be one method, instead of four for each criteria
   def is_hq_cb?

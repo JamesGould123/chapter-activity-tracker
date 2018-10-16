@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :spendings
   resources :buckets
   resources :categories
   resources :chapter_actions
