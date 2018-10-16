@@ -5,7 +5,21 @@ class ChaptersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @actions = ChapterAction.where("user_id = #{@user.id}")
     get_chapter_total_points(@user)
+    @cb_points = 0
+    @pc_points = 0
+    @te_points = 0
+    @actions.each do |action|
+      case Category.find(action.category_id).bucket_id
+      when 1
+        @cb_points = @cb_points + action.points
+      when 2
+        @pc_points = @pc_points + action.points
+      when 3
+        @te_points = @pc_points + action.points
+      end
+    end
   end
 
   def leaderboard
