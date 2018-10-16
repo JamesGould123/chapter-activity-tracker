@@ -23,10 +23,10 @@
                         <p class="points-earned text-center"><%= @cb_points + @pc_points + @te_points %></p>
                     </div>
                     <div class="row">
-                        <p class="text-center margin-center">Spent: {{ chapter['cb'] + chapter['pc'] + chapter['te'] - chapter['balance']}} </p>
+                        <p class="text-center margin-center">Spent:</p>
                     </div>
                     <div class="row">
-                        <p class="text-center margin-center">Current balance: {{chapter['balance']}}</p>
+                        <p class="text-center margin-center">Current balance:</p>
                     </div>
                     <div class="row">
                       <%= image_tag("shark.png", class: "img-responsive") %>
@@ -44,22 +44,20 @@
                         <th scope="col">Action</th>
                         <th scope="col">Points</th>
                         <th scope="col">Note</th>
-                        {% if g.user['Permissions'] == 'Admin' or g.user['Permissions'] == 'Staffer' or g.user['url'] == url_verify %}
                         <th scope="col"></th>
-                        {% endif %}
                     </tr>
                 </thead>
                 <tbody>
-                    {% for action in actions %}
+                    <% @actions.each do |action| %>
                     <tr>
                         <td>
-                            {{ action['title'] }}
+                            action.category_id
                         </td>
                         <td>
-                            {{ action['points'] }}
+                            action.points
                         </td>
                         <td>
-                            {{ action['note'] }}
+                            action.note
                         </td>
                         {% if g.user['Permissions'] == 'Admin' or g.user['Permissions'] == 'Staffer' or g.user['url'] == url_verify %}
 
@@ -69,8 +67,7 @@
                         {% endif %}
 
                     </tr>
-                    {% endfor %}
+                   <% end %>
                 </tbody>
             </table>
         </div>
-        {% endblock %}
