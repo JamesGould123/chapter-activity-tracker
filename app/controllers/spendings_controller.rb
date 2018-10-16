@@ -15,6 +15,7 @@ class SpendingsController < ApplicationController
   # GET /spendings/new
   def new
     @spending = Spending.new
+    @users = User.all.map { |u| [u.name, u.id] }
   end
 
   # GET /spendings/1/edit
@@ -25,6 +26,7 @@ class SpendingsController < ApplicationController
   # POST /spendings.json
   def create
     @spending = Spending.new(spending_params)
+    @users = User.all.map { |u| [u.name, u.id] }
 
     respond_to do |format|
       if @spending.save

@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= form.label :user_id %>
-    <%= form.text_field :user_id, id: :spending_user_id, :class => "form-control" %>
+    <%= form.select(:user_id, options_for_select(@users), :prompt => "Select a chapter!", :class => "form-control") %>
   </div>
 
   <div class="field">
