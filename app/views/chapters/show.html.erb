@@ -23,10 +23,10 @@
                         <p class="points-earned text-center"><%= @cb_points + @pc_points + @te_points %></p>
                     </div>
                     <div class="row">
-                        <p class="text-center margin-center">Spent:</p>
+                        <p class="text-center margin-center">Spent: <%= @spendings.sum("points") %></p>
                     </div>
                     <div class="row">
-                        <p class="text-center margin-center">Current balance:</p>
+                        <p class="text-center margin-center">Current balance: <%= @cb_points + @pc_points + @te_points - @spendings.sum("points") %></p>
                     </div>
                     <div class="row">
                       <%= image_tag("shark.png", class: "img-responsive") %>

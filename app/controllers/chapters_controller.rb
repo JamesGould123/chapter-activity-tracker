@@ -6,6 +6,7 @@ class ChaptersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @actions = ChapterAction.where("user_id = #{@user.id}")
+    @spendings = Spending.where("user_id = #{@user.id}")
     get_chapter_total_points(@user)
     @cb_points = 0
     @pc_points = 0
