@@ -13,10 +13,15 @@
 
   <div class="field">
     <%= form.label :user_id %>
-    <%= form.text_field :user_id, id: :spending_user_id %>
+    <%= form.text_field :user_id, id: :spending_user_id, :class => "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :points %>
+    <%= form.number_field :points, id: :spending_points, :class => "form-control" %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit :class => "form-control" %>
   </div>
 <% end %>
