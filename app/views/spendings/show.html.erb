@@ -10,5 +10,11 @@
   <%= @spending.points.to_s %>
 </p>
 
+<p>
+  <strong>Description:</strong>
+  <%= @spending.desc.to_s %>
+</p>
+
+
 <%= link_to 'Edit', edit_spending_path(@spending) %> |
 <%= link_to 'Back', spendings_path %>

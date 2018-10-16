@@ -71,6 +71,6 @@ class SpendingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def spending_params
-      params.require(:spending).permit(:user_id, :points)
+      params.require(:spending).permit(:user_id, :points, :desc)
     end
 end

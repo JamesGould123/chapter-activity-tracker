@@ -17,6 +17,11 @@
   </div>
 
   <div class="field">
+    <%= form.label "Description" %>
+    <%= form.text_area :desc, id: :spending_desc, :class => "form-control" %>
+  </div>
+
+  <div class="field">
     <%= form.label :points %>
     <%= form.number_field :points, id: :spending_points, :class => "form-control" %>
   </div>
