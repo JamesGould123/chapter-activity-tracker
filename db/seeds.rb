@@ -10,14 +10,16 @@ User.create!(name:  "Example Chapter",
              email: "chapter1@chapters.ssdp.org",
              password:              "foobar",
              password_confirmation: "foobar",
-             permissions:           "chapter")
+             permissions:           "chapter",
+             slug: "example-chapter")
 
 
 User.create!(name:  "Example Staffer",
             email: "staff@ssdp.org",
             password:              "foobar",
             password_confirmation: "foobar",
-            permissions:           "staffer")
+            permissions:           "staffer",
+            slug: "example-staffer")
 
 
 
@@ -25,7 +27,8 @@ User.create!(name:  "Example Admin",
              email: "admin@ssdp.org",
              password:              "foobar",
              password_confirmation: "foobar",
-             permissions:           "administrator")
+             permissions:           "administrator",
+             slug: "example-administrator")
 
 
 
@@ -37,7 +40,8 @@ User.create!(name:  "Example Admin",
               email: email,
               password:              password,
               password_confirmation: password,
-              permissions:           "chapter")
+              permissions:           "chapter",
+              slug: name)
 
 end
 
