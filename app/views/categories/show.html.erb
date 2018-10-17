@@ -25,4 +25,15 @@
 <%= link_to 'Back', categories_path %>
 <br>
 
-<%= @actions %>
+<table>
+  <tr>
+    <th>Chapter</th>
+    <th>Date</th>
+  </tr>
+<% @actions.each do |action| %>
+  <tr>
+    <td><%= User.where("id=#{action.user_id}")[0].name%></td>
+    <td><%= action.created_at %></td>
+  </tr>
+<% end %>
+</table>
