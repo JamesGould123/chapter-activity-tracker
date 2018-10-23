@@ -7,7 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # Set up staff names as an array for database seed
-staff = ["Betty", "Stacia", "Lauren", "Rachel", "Jake", "Elise", "Luis", "Hannah", "Vilmarie", "Nick"]
+staff = [
+         "Betty", "Stacia", "Lauren", "Rachel", "Jake",
+         "Elise", "Luis", "Hannah", "Vilmarie", "Nick"
+        ]
 
 # Create starter admin. Add instructions to change password.
 User.create!(name:  "Admin",
@@ -25,19 +28,6 @@ User.create!(name:  staffer,
             permissions:           "staffer",
             slug: staffer)
 end
-
-# 99.times do |n|
-#   name  = "Chapter#{n+1}"
-#   email = "chapter-#{n+1}@chapters.ssdp.org"
-#   password = "password"
-#   User.create!(name:  name,
-#               email: email,
-#               password:              password,
-#               password_confirmation: password,
-#               permissions:           "chapter",
-#               slug: name)
-#
-# end
 
 Bucket.create!(
   name: "Chapter Building"
