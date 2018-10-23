@@ -46,7 +46,7 @@
         <td>
           <%= link_to category.name, category_path(id: category.id) %></a>
         </td>
-        <td><%= @actions.where("category_id=#{category.id}").count%></td>
+        <td><%= @actions.where("category_id = #{category.id}").count%></td>
       </tr>
       <% end %>
     </table>
