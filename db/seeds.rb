@@ -488,9 +488,10 @@ actions.each do |action|
   name = action["author_id"].to_s
   title = action["title"].to_s
   ChapterAction.create!(
-                           user_id:     User.where("name = '#{name}'")[0].id,
-                           note:        action["note"],
-                           points:      action["points"],
-                           category_id: Category.where("name = '#{title}'")[0].id
+                           user_id:        User.where("name = '#{name}'")[0].id,
+                           note:           action["note"],
+                           points:         action["points"],
+                           category_id:    Category.where("name = '#{title}'")[0].id,
+                           date_completed: action["created"]
   )
 end

@@ -4,7 +4,7 @@ class ChapterActionsController < ApplicationController
   # GET /chapter_actions
   # GET /chapter_actions.json
   def index
-    @chapter_actions = ChapterAction.all
+    @chapter_actions = ChapterAction.all.order('date_completed DESC')
   end
 
   # GET /chapter_actions/1
