@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181017192732) do
+ActiveRecord::Schema.define(version: 20181023213345) do
 
   create_table "buckets", force: :cascade do |t|
     t.string "name"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20181017192732) do
     t.datetime "updated_at", null: false
     t.string "category_id"
     t.integer "bucket_id"
+    t.datetime "date_completed"
     t.index ["bucket_id"], name: "index_chapter_actions_on_bucket_id"
     t.index ["user_id"], name: "index_chapter_actions_on_user_id"
   end
