@@ -79,6 +79,6 @@ class ChapterActionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def chapter_action_params
-      params.require(:chapter_action).permit(:user_id, :points, :note)
+      params.require(:chapter_action).permit(:user_id, :points, :note, :date_completed)
     end
 end

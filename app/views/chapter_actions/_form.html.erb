@@ -20,6 +20,11 @@
   <%= select_tag(:user_id, options_for_select(@users), :prompt => "Select a chapter!", :class => "form-control") %>
 <% end %>
 
+<div class = "field">
+  <%= form.label :date_completed %>
+  <%= form.date_field :date_completed, :value => Time.now.strftime('%Y-%m-%d'), :class => "form-control" %>
+</div>
+
 <div class="field">
   <%= form.label :points %>
   <%= form.number_field :points, id: :chapter_action_points, :class => "form-control" %>
