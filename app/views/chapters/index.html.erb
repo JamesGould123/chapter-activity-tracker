@@ -6,7 +6,7 @@
       <% if user.permissions == "chapter" %>
         <article class="post">
           <div>
-            <div class="about"><%= link_to("#{user.name}", "/chapters/#{user.id}")%></div>
+            <div class="about"><%= link_to("#{user.name}", "/chapters/#{user.slug}")%></div>
           </div>
         </article>
         <hr>
