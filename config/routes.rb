@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   get '/store',                to: 'static_pages#store'
   get '/control-panel',        to: 'static_pages#control_panel'
   get '/chapters/',            to: 'chapters#index'
-  get '/chapters/:id',         to: 'chapters#show'
+  get '/chapters/:slug',       to: 'chapters#show'
   get '/leaderboard',          to: 'chapters#leaderboard'
   get '/stats',                to: 'chapters#stats'
 
