@@ -18,7 +18,7 @@ class ChaptersController < ApplicationController
       when 2
         @pc_points = @pc_points + action.points
       when 3
-        @te_points = @pc_points + action.points
+        @te_points = @te_points + action.points
       end
     end
   end
@@ -47,7 +47,7 @@ class ChaptersController < ApplicationController
       when 2
         @pc_points = @pc_points + action.points
       when 3
-        @te_points = @pc_points + action.points
+        @te_points = @te_points + action.points
       end
     end
     @users.each do |u|
