@@ -6,44 +6,38 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create!(name:  "Example Chapter",
-             email: "chapter1@chapters.ssdp.org",
-             password:              "foobar",
-             password_confirmation: "foobar",
-             permissions:           "chapter",
-             slug: "example-chapter")
+# Set up staff names as an array for database seed
+staff = ["Betty", "Stacia", "Lauren", "Rachel", "Jake", "Elise", "Luis", "Hannah", "Vilmarie", "Nick"]
 
-
-User.create!(name:  "Example Staffer",
-            email: "staff@ssdp.org",
-            password:              "foobar",
-            password_confirmation: "foobar",
-            permissions:           "staffer",
-            slug: "example-staffer")
-
-
-
-User.create!(name:  "Example Admin",
-             email: "admin@ssdp.org",
-             password:              "foobar",
-             password_confirmation: "foobar",
+# Create starter admin. Add instructions to change password.
+User.create!(name:  "Admin",
+             email: "tyler.williams@ssdp.org",
+             password:              "meowcatgrassroots",
+             password_confirmation: "meowcatgrassroots",
              permissions:           "administrator",
-             slug: "example-administrator")
+             slug: "admin")
 
-
-
-99.times do |n|
-  name  = "Chapter#{n+1}"
-  email = "chapter-#{n+1}@chapters.ssdp.org"
-  password = "password"
-  User.create!(name:  name,
-              email: email,
-              password:              password,
-              password_confirmation: password,
-              permissions:           "chapter",
-              slug: name)
-
+staff.each do |staffer|
+User.create!(name:  staffer,
+            email: "#{staffer}@ssdp.org",
+            password:              "meowcatgrassroots",
+            password_confirmation: "meowcatgrassroots",
+            permissions:           "staffer",
+            slug: staffer)
 end
+
+# 99.times do |n|
+#   name  = "Chapter#{n+1}"
+#   email = "chapter-#{n+1}@chapters.ssdp.org"
+#   password = "password"
+#   User.create!(name:  name,
+#               email: email,
+#               password:              password,
+#               password_confirmation: password,
+#               permissions:           "chapter",
+#               slug: name)
+#
+# end
 
 Bucket.create!(
   name: "Chapter Building"
