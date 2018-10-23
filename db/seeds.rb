@@ -6,6 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require 'json'
+
+flask_cat_user_seeds_file = File.join(Rails.root, 'db', 'seeds','user.json')
+
+flask_cat_user_seeds = File.read(flask_cat_user_seeds_file)
+
+chapters = JSON.parse(flask_cat_user_seeds)
+
 # Set up staff names as an array for database seed
 staff = [
          "Betty", "Stacia", "Lauren", "Rachel", "Jake",
@@ -13,20 +21,35 @@ staff = [
         ]
 
 # Create starter admin. Add instructions to change password.
-User.create!(name:  "Admin",
-             email: "tyler.williams@ssdp.org",
-             password:              "meowcatgrassroots",
-             password_confirmation: "meowcatgrassroots",
-             permissions:           "administrator",
-             slug: "admin")
+User.create!(
+                name:                  "Admin",
+                email:                 "tyler.williams@ssdp.org",
+                password:              "meowcatgrassroots",
+                password_confirmation: "meowcatgrassroots",
+                permissions:           "administrator",
+                slug:                  "admin"
+            )
 
 staff.each do |staffer|
-User.create!(name:  staffer,
-            email: "#{staffer}@ssdp.org",
-            password:              "meowcatgrassroots",
-            password_confirmation: "meowcatgrassroots",
-            permissions:           "staffer",
-            slug: staffer)
+  User.create!(
+                  name:                  staffer,
+                  email:                 "#{staffer}@ssdp.org",
+                  password:              "meowcatgrassroots",
+                  password_confirmation: "meowcatgrassroots",
+                  permissions:           "staffer",
+                  slug:                  staffer
+              )
+end
+
+chapters.each do |chapter|
+  User.create!(
+                  name:                  chapter["username"],
+                  email:                 chapter["email"],
+                  password:              "meowcatgrassroots",
+                  password_confirmation: "meowcatgrassroots",
+                  permissions:           "chapter",
+                  slug:                  chapter["url"]
+              )
 end
 
 Bucket.create!(
