@@ -20,6 +20,12 @@ flask_cat_action_seeds = File.read(flask_cat_action_seeds_file)
 
 actions = JSON.parse(flask_cat_action_seeds)
 
+flask_cat_spending_seeds_file = File.join(Rails.root, 'db', 'seeds', 'spending.json')
+
+flask_cat_spending_seeds = File.read(flask_cat_spending_seeds_file)
+
+spendings = JSON.parse(flask_cat_spending_seeds)
+
 # Set up staff names as an array for database seed
 staff = [
          "Betty", "Stacia", "Lauren", "Rachel", "Jake",
@@ -494,4 +500,17 @@ actions.each do |action|
                            category_id:    Category.where("name = '#{title}'")[0].id,
                            date_completed: action["created"]
   )
+end
+
+spendings.each do |spending|
+  name = spending["username"]
+  if spending["balance"].to_i != 0
+    unless User.where("name = '#{name}'")[0].nil?
+      Spending.create!(
+                          user_id: User.where("name = '#{name}'")[0].id,
+                          points:  spending["balance"].to_i * -1,
+                          desc:    "Rollover from program year 2017-2018"
+      )
+    end
+  end
 end
