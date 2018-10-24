@@ -1,3 +1,4 @@
+require 'will_paginate/array'
 class ChaptersController < ApplicationController
   def index
     @users = User.where("permissions = 'chapter'").paginate(:page =>params[:page], :per_page => 10)
@@ -24,10 +25,23 @@ class ChaptersController < ApplicationController
   end
 
   def leaderboard
-    @users = User.where("permissions = 'chapter'").paginate(:page =>params[:page], :per_page => 10)
-    # Convert this into a hash
-    # Key value pair: key is chapter name, value is total points for that chapter
-    # Paginate hash and pass to leaderboard
+    # Get a hash of the users which are chapters
+    @users_hash = User.where("permissions = 'chapter'").as_json
+    @leaderboard_hash = {}
+    @users_hash.each do |user|
+      @points = 0
+      @actions = ChapterAction.where("user_id = #{user["id"]}")
+      @actions.each do |action|
+        @points = @points + action.points
+      end
+      @leaderboard_hash[user["name"]] = @points
+    end
+
+    @leaderboard_hash = @leaderboard_hash.sort_by { |name, points| points }
+    @leaderboard_hash = @leaderboard_hash.reverse
+
+    @users = @leaderboard_hash.paginate(:page =>params[:page], :per_page => 10)
+
   end
 
   def stats
