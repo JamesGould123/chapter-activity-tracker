@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181024025146) do
+ActiveRecord::Schema.define(version: 20181024180120) do
 
   create_table "buckets", force: :cascade do |t|
     t.string "name"
@@ -39,6 +39,14 @@ ActiveRecord::Schema.define(version: 20181024025146) do
     t.datetime "date_completed"
     t.index ["bucket_id"], name: "index_chapter_actions_on_bucket_id"
     t.index ["user_id"], name: "index_chapter_actions_on_user_id"
+  end
+
+  create_table "reports", force: :cascade do |t|
+    t.string "chapter_universe"
+    t.string "task_universe"
+    t.string "time_window"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "spendings", force: :cascade do |t|

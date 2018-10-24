@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Chapter universe:</strong>
+  <%= @report.chapter_universe %>
+</p>
+
+<p>
+  <strong>Task universe:</strong>
+  <%= @report.task_universe %>
+</p>
+
+<p>
+  <strong>Time window:</strong>
+  <%= @report.time_window %>
+</p>
+
+<%= link_to 'Edit', edit_report_path(@report) %> |
+<%= link_to 'Back', reports_path %>

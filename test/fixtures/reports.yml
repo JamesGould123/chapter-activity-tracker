@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  chapter_universe: MyString
+  task_universe: MyString
+  time_window: MyString
+
+two:
+  chapter_universe: MyString
+  task_universe: MyString
+  time_window: MyString
