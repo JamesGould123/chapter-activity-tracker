@@ -514,10 +514,11 @@ spendings.each do |spending|
       )
     end
   end
+end
+
 
 Report.create!(
                    chapter_universe: "all",
                    task_universe:    "all",
                    time_window:      "daily"
 )
-end
