@@ -12,21 +12,21 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :chapter_universe %>
-    <%= form.text_field :chapter_universe, id: :report_chapter_universe %>
+    <%= form.label :chapter_universe  %>
+    <%= form.text_field :chapter_universe, id: :report_chapter_universe, :class => "form-control" %>
   </div>
 
   <div class="field">
     <%= form.label :task_universe %>
-    <%= form.text_field :task_universe, id: :report_task_universe %>
+    <%= form.text_field :task_universe, id: :report_task_universe, :class => "form-control" %>
   </div>
 
   <div class="field">
     <%= form.label :time_window %>
-    <%= form.text_field :time_window, id: :report_time_window %>
+    <%= form.text_field :time_window, id: :report_time_window, :class => "form-control" %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit :class => "form-control" %>
   </div>
 <% end %>
