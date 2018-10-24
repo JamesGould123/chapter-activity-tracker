@@ -4,16 +4,13 @@ Rails.application.routes.draw do
   resources :buckets
   resources :categories
   resources :chapter_actions
+  resources :relationships, only: [:create, :destroy]
   get 'chapters/index'
 
   devise_for :users, controllers: {
    sessions: 'users/sessions',
    registrations: 'users/registrations'
  }
-
-
-
-
   root to: 'chapter_actions#index'
 
   get '/faq',                  to: 'static_pages#faq'
