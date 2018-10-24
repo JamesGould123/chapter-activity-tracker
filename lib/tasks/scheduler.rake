@@ -8,8 +8,6 @@ end
 task :print_report_data => :environment do
   @reports = Report.all
   @reports.each do |report|
-    puts report.chapter_universe
-    puts report.task_universe
-    puts report.time_window
+    report.send_email()
   end
 end
