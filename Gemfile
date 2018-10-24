@@ -44,6 +44,9 @@ gem 'devise'
 # Use will paginate 4 for pagination
 gem 'will_paginate-bootstrap4'
 
+# Use figaro for environment variables
+gem "figaro"
+
 group :production do
   gem 'pg'
 end
