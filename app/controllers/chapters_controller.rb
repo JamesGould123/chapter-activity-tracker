@@ -24,7 +24,10 @@ class ChaptersController < ApplicationController
   end
 
   def leaderboard
-    @users = User.paginate(:page => params[:page], :per_page => 10)
+    @users = User.where("permissions = 'chapter'").paginate(:page =>params[:page], :per_page => 10)
+    # Convert this into a hash
+    # Key value pair: key is chapter name, value is total points for that chapter
+    # Paginate hash and pass to leaderboard
   end
 
   def stats
