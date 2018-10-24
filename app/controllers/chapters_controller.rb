@@ -1,6 +1,6 @@
 class ChaptersController < ApplicationController
   def index
-    @users = User.paginate(:page =>params[:page], :per_page => 10)
+    @users = User.where("permissions = 'chapter'").paginate(:page =>params[:page], :per_page => 10)
   end
 
   def show
