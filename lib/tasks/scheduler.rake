@@ -5,9 +5,9 @@ task :update_feed => :environment do
   puts "done."
 end
 
-task :print_report_data => :environment do
+task :send_reports => :environment do
   @reports = Report.all
   @reports.each do |report|
-    report.send_email()
+    report.send()
   end
 end
