@@ -47,6 +47,9 @@ gem 'will_paginate-bootstrap4'
 # Use figaro for environment variables
 gem "figaro"
 
+# Use sidekiq for report generation
+gem 'sidekiq'
+
 group :production do
   gem 'pg'
 end
