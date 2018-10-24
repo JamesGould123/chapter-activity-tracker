@@ -509,7 +509,8 @@ spendings.each do |spending|
       Spending.create!(
                           user_id: User.where("name = '#{name}'")[0].id,
                           points:  spending["balance"].to_i * -1,
-                          desc:    "Rollover from program year 2017-2018"
+                          desc:    "Rollover from program year 2017-2018",
+                          rollover: "true"
       )
     end
   end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181023213345) do
+ActiveRecord::Schema.define(version: 20181024025146) do
 
   create_table "buckets", force: :cascade do |t|
     t.string "name"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 20181023213345) do
     t.datetime "updated_at", null: false
     t.integer "points"
     t.text "desc"
+    t.string "rollover"
     t.index ["user_id"], name: "index_spendings_on_user_id"
   end
 

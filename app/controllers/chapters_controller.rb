@@ -29,7 +29,7 @@ class ChaptersController < ApplicationController
 
   def stats
     @actions = ChapterAction.all
-    @spendings = Spending.all
+    @spendings = Spending.where("rollover != 'true'")
     @categories = Category.all
     @users = User.all
     @cb_points = 0
