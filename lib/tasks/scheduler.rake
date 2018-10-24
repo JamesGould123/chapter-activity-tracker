@@ -8,6 +8,6 @@ end
 task :send_reports => :environment do
   @reports = Report.all
   @reports.each do |report|
-    report.send()
+    report.send_report_email()
   end
 end
