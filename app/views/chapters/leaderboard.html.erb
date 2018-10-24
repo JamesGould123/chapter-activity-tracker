@@ -6,7 +6,7 @@
     <% @users.each do |user| %>
         <article class="post">
           <div>
-            <div class="about"><%= link_to("#{user[0]}", "/chapters/#{User.where("name = '#{user[0]}'")[0].slug}")%></div>
+            <div class="about"><%= link_to("#{user[0]}", "/chapters/#{User.where("name = '#{user[0]}'")[0].slug}")%> - <%= user[1] %> points</div>
           </div>
         </article>
         <hr>
