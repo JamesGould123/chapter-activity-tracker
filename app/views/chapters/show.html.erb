@@ -1,72 +1,80 @@
 <h1><%= @user.name %></h1>
 <%= render 'follow_form' if user_signed_in? %>
 
-
 <div class="col">
-    <div class="container">
-        <div class="row no-gutters">
-            <div class="border col-3 bucket">
-                <div class="progress-fill" style="height: <%= @cb_points %>%"> </div>
-                <p class="progress-label text-center">Chapter Building</p>
-                <span class="point-decl"><%= @cb_points %> points</span>
-              </div>
-            <div class="border col-3 bucket">
-                <div class="progress-fill" style="height:<%= @pc_points %>%"></div>
-                <p class="progress-label text-center">Policy Change</p>
-                <span class="point-decl"><%= @pc_points %> points</span>
-            </div>
-            <div class="border col-3 bucket">
-                <div class="progress-fill" style="height:<%= @te_points %>%"></div>
-                <p class="progress-label text-center">Training and Education</p>
-                <span class="point-decl"><%= @te_points %> points</span>
-            </div>
-            <div class="border col-3 bucket">
-                <div class="container">
-                    <div class="row">
-                        <p class="points-earned text-center"><%= @cb_points + @pc_points + @te_points %></p>
-                    </div>
-                    <div class="row">
-                        <p class="text-center margin-center">Spent: <%= @spendings.sum("points") %></p>
-                    </div>
-                    <div class="row">
-                        <p class="text-center margin-center">Current balance: <%= @cb_points + @pc_points + @te_points - @spendings.sum("points") %></p>
-                    </div>
-                    <div class="row">
-                      <%= image_tag("shark.png", class: "img-responsive") %>
-                    </div>
-                </div>
-            </div>
+  <div class="container">
+    <div class="row no-gutters">
+      <div class="border col-3 bucket">
+        <div class="progress-fill" style="height: <%= @cb_points %>%"></div>
+        <p class="progress-label text-center">Chapter Building</p>
+        <span class="point-decl"><%= @cb_points %>
+          points</span>
+      </div>
+      <div class="border col-3 bucket">
+        <div class="progress-fill" style="height:<%= @pc_points %>%"></div>
+        <p class="progress-label text-center">Policy Change</p>
+        <span class="point-decl"><%= @pc_points %>
+          points</span>
+      </div>
+      <div class="border col-3 bucket">
+        <div class="progress-fill" style="height:<%= @te_points %>%"></div>
+        <p class="progress-label text-center">Training and Education</p>
+        <span class="point-decl"><%= @te_points %>
+          points</span>
+      </div>
+      <div class="border col-3 bucket">
+        <div class="container">
+          <div class="row">
+            <p class="points-earned text-center"><%= @cb_points + @pc_points + @te_points %></p>
+          </div>
+          <div class="row">
+            <p class="text-center margin-center">Spent:
+              <%= @spendings.sum("points") %></p>
+          </div>
+          <div class="row">
+            <p class="text-center margin-center">Current balance:
+              <%= @cb_points + @pc_points + @te_points - @spendings.sum("points") %></p>
+          </div>
+          <div class="row">
+            <%= image_tag("shark.png", class: "img-responsive") %>
+          </div>
         </div>
-        <div class="row mt-3">
-            <h2>Activity Feed</h2>
-        </div>
-        <div class="feed-div row mt-3">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">Action</th>
-                        <th scope="col">Points</th>
-                        <th scope="col">Note</th>
-                        <th scope="col"></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <% @actions.each do |action| %>
-                    <tr>
-                        <td>
-                            <%= Category.where("id = #{action.category_id}")[0].name %>
-                        </td>
-                        <td>
-                            <%= action.points %>
-                        </td>
-                        <td>
-                            <%= action.note %>
-                        </td>
-                        <td>
-                            <%= link_to("Edit", chapter_action_path(:id => action.id)) %>
-                        </td>
-                    </tr>
-                   <% end %>
-                </tbody>
-            </table>
-        </div>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <h2>Activity Feed</h2>
+    </div>
+    <div class="feed-div row mt-3">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Action</th>
+            <th scope="col">Points</th>
+            <th scope="col">Note</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @actions.each do |action| %>
+            <tr>
+              <td>
+                <%= Category.where("id = #{action.category_id}")[0].name %>
+              </td>
+              <td>
+                <%= action.points %>
+              </td>
+              <td>
+                <%= action.note %>
+              </td>
+              <td>
+                <% if user_signed_in? %>
+                  <% if user_is_admin? || current_user.id == @user.id %>
+                    <%= link_to("Edit", chapter_action_path(:id => action.id)) %>
+                  <% end %>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
