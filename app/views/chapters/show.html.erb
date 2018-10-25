@@ -1,8 +1,7 @@
-<h1><%= @user.name %></h1>
-<%= render 'follow_form' if user_signed_in? %>
-
 <div class="col">
   <div class="container">
+    <h1><%= @user.name %></h1>
+
     <div class="row no-gutters">
       <div class="border col-3 bucket">
         <div class="progress-fill" style="height: <%= @cb_points <= 100 ? @cb_points : 100 %>%"></div>
@@ -40,6 +39,8 @@
           </div>
         </div>
       </div>
+      <%= render 'follow_form' if user_signed_in? %>
+
     </div>
     <div class="row mt-3">
       <h2>Activity Feed</h2>
