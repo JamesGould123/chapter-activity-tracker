@@ -2,14 +2,17 @@
   <div class="col">
     <h1>Leaderboard</h1>
     <%= will_paginate @users %>
-
-    <% @users.each do |user| %>
-        <article class="post">
-          <div>
-            <div class="about"><%= link_to("#{user[0]}", "/chapters/#{User.where("name = '#{user[0]}'")[0].slug}")%> - <%= user[1] %> points</div>
-          </div>
-        </article>
-        <hr>
-    <% end %>
+    <table width="100%">
+      <tr>
+        <th>Chapter</th>
+        <th>Points</th>
+      </tr>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= link_to("#{user[0]}", "/chapters/#{User.where("name = '#{user[0]}'")[0].slug}")%></td>
+          <td><%= user[1] %></td>
+        </tr>
+      <% end %>
+    </table>
   </div>
 </div>
