@@ -5,19 +5,19 @@
   <div class="container">
     <div class="row no-gutters">
       <div class="border col-3 bucket">
-        <div class="progress-fill" style="height: <%= @cb_points %>%"></div>
+        <div class="progress-fill" style="height: <%= @cb_points <= 100 ? @cb_points : 100 %>%"></div>
         <p class="progress-label text-center">Chapter Building</p>
         <span class="point-decl"><%= @cb_points %>
           points</span>
       </div>
       <div class="border col-3 bucket">
-        <div class="progress-fill" style="height:<%= @pc_points %>%"></div>
+        <div class="progress-fill" style="height:<%= @pc_points <= 100 ? @pc_points: 100 %>%"></div>
         <p class="progress-label text-center">Policy Change</p>
         <span class="point-decl"><%= @pc_points %>
           points</span>
       </div>
       <div class="border col-3 bucket">
-        <div class="progress-fill" style="height:<%= @te_points %>%"></div>
+        <div class="progress-fill" style="height:<%= @pc_points <= 100? @te_points: 100 %>%"></div>
         <p class="progress-label text-center">Training and Education</p>
         <span class="point-decl"><%= @te_points %>
           points</span>
