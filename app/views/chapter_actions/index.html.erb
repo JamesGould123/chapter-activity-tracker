@@ -3,16 +3,20 @@
   <div class="col">
     <h1>Activity Feed</h1>
     <% @chapter_actions.each do |chapter_action| %>
+      <div class="card" style="width: 100%;">
+        <div class="card-body">
+          <h5 class="card-title"><%= chapter_action.user.name %> completed an action:</h5>
+          <p class="card-text"><%= chapter_action.category.name %></p>
+        </div>
+      </div>
       <article class="post">
         <header>
           <div>
-            <div class="about"><%= chapter_action.user.name %>
-              completed an action:
-              <%= chapter_action.category.name %>
-              </div>
+            <div class="about">
             </div>
-          </header>
-        </article>
-      <% end %>
-    </div>
+          </div>
+        </header>
+      </article>
+    <% end %>
   </div>
+</div>
