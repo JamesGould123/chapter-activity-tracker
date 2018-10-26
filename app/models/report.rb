@@ -2,6 +2,7 @@ class Report < ApplicationRecord
   def send_report_email
     data = {}
     staffer = User.find(self.staffer_id)
+    address = staffer.email
     following_ids = staffer.following_ids
     following_ids.each do |following_id|
       followed_account = User.find(following_id)
@@ -19,7 +20,7 @@ class Report < ApplicationRecord
       end
       data[followed_account.name] = action_data
     end
-    ReportMailer.report_email(data).deliver
+    ReportMailer.report_email(data, address).deliver
   end
 end
 

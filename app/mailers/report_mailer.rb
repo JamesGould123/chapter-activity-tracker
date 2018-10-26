@@ -6,8 +6,8 @@ class ReportMailer < ApplicationMailer
     mail(to: "tyler.williams@ssdp.org", subject: 'Sample Email')
   end
 
-  def report_email(report)
+  def report_email(report, address)
     @data = report
-    mail(to: "tyler.williams@ssdp.org", subject: 'CAT Report')
+    mail(to: address, subject: 'CAT Report')
   end
 end
