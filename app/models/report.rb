@@ -8,7 +8,8 @@ class Report < ApplicationRecord
       actions =  ChapterAction.where("user_id = '#{followed_account.id}'")
       action_data = []
       actions.each do |action|
-        action_data << action
+        description = Category.find(action.category_id).name
+        action_data << description
       end
       data[followed_account.name] = action_data
     end

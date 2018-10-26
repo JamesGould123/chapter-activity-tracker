@@ -5,7 +5,14 @@
   </head>
   <body>
     <p>
-      <%= @data %>
+      <%= @data.each do |key, value| %>
+      <h1><%= key %></h1>
+      <br />
+      <%= value.each do |activity| %>
+      <%= activity %>
+      <br />
+      <% end %>
+      <% end %>
     </p>
   </body>
 </html>
