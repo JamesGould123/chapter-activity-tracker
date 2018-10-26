@@ -38,15 +38,3 @@ class Report < ApplicationRecord
     end
   end
 end
-
-
-
-
-# 1. scheduler rake task fires one task
-# 2. That task runs through the list of all reports
-# 3. Each report runs send_report_email with options
-# 4. So each report needs to know:
-## - Recipient address
-## - Recipient id to get following ids
-## - How often it should fire (daily or weekly?)
-## - Action ID filter - can do by bucket ID, probably.
