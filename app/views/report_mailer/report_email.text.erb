@@ -1,8 +1,8 @@
 <% @data.each do |key, value| %>
-<h1><%= key %></h1>
-<br />
-<% value.each do |activity| %>
-<%= activity %>
-<br />
-<% end %>
+  <% if value.count > 0 %>
+    <%= key %>
+      <% value.each do |activity| %>
+        <%= activity %>
+      <% end %>
+  <% end %>
 <% end %>

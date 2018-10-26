@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
   </head>
   <body>
-      <% @data.each do |key, value| %>
-      <h1><%= key %></h1>
-      <br />
-      <ul>
-      <% value.each do |activity| %>
-      <li><%= activity %></li>
-      <br />
+    <% @data.each do |key, value| %>
+      <% if value.count > 0 %>
+        <h1><%= key %></h1>
+        <br/>
+        <ul>
+          <% value.each do |activity| %>
+            <li><%= activity %></li>
+            <br/>
+          <% end %>
+        </ul>
       <% end %>
-      </ul>
-      <% end %>
+    <% end %>
   </body>
 </html>
