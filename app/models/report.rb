@@ -1,13 +1,17 @@
 class Report < ApplicationRecord
   def send_report_email
     data = {}
-    user = User.first
-    following_ids = user.following_ids
+    staffer = User.find(self.staffer_id)
+    following_ids = staffer.following_ids
     following_ids.each do |following_id|
       followed_account = User.find(following_id)
-      actions =  ChapterAction.where("user_id = '#{followed_account.id}'")
-      # Date selection code:
-      ChapterAction.where(:date_completed => Date.new(2018, 1, 1)..Date.new(2018, 10, 1))
+      # If time window is daily, get the actions for today
+      # If time window is weekly, get the actions for the last week
+      if time_window == 'daily'
+        actions =  ChapterAction.where("user_id = '#{followed_account.id}'").where(:date_completed => Date.yesterday..Date.today)
+      else
+        actions =  ChapterAction.where("user_id = '#{followed_account.id}'").where(:date_completed => Date.today-6..Date.today)
+      end
       action_data = []
       actions.each do |action|
         description = Category.find(action.category_id).name
@@ -26,4 +30,4 @@ end
 ## - Recipient address
 ## - Recipient id to get following ids
 ## - How often it should fire (daily or weekly?)
-## - Action ID filter 
+## - Action ID filter

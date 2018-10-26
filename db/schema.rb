@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181024212724) do
+ActiveRecord::Schema.define(version: 20181026203644) do
 
   create_table "buckets", force: :cascade do |t|
     t.string "name"
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 20181024212724) do
     t.string "time_window"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "staffer_id"
   end
 
   create_table "spendings", force: :cascade do |t|
