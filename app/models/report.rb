@@ -18,7 +18,7 @@ class Report < ApplicationRecord
       ReportMailer.report_email(data, address).deliver
     end
   end
-  def send_report_email_weekly
+    def send_report_email_weekly
     if self.time_window == "weekly"
       data = {}
       staffer = User.find(self.staffer_id)
