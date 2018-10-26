@@ -16,5 +16,14 @@
         </ul>
       <% end %>
     <% end %>
+    <h2>These chapters completed no activities</h2>
+      <ul>
+        <% @data.each do |key, value| %>
+          <% if value.count == 0 %>
+          <li><%= key %></li>
+
+          <% end %>
+        <% end %>
+        </ul>
   </body>
 </html>
