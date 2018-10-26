@@ -4,15 +4,15 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <p>
       <% @data.each do |key, value| %>
       <h1><%= key %></h1>
       <br />
+      <ul>
       <% value.each do |activity| %>
-      <%= activity %>
+      <li><%= activity %></li>
       <br />
       <% end %>
+      </ul>
       <% end %>
-    </p>
   </body>
 </html>
