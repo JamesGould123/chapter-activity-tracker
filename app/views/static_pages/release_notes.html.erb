@@ -7,7 +7,7 @@
     <p>In the summer of 2016, Drew converted the CAT WordPress theme into a Drupal installation, complete with a content schema and new front end theme. Drupal solved back-end problems, and allowed us to more easily track statistics and report on data to our stakeholders, but the platform still had plenty of limitations.</p>
     <p>In the 2017-2018 program year, Tyler Williams rebuilt the CAT using the Flask microframework for Python. This rebuild provided more speed, allowed for more customization and data reporting features for staff, and incorporated the bootstrap frontend framework.</p>
     <p>CAT v3, built with Flask, still suffered from some customization issues. It was built from the ground up and some fundamental architecture made the codebase difficult to read and maintain, without any real convention.</p>
-    <p>Enter CAT v4.0.0 - rebuilt in Rails, the Rails Way. This fourth, and hopefully final, major version
+    <p>Enter CAT v4.0.0 - rebuilt in Rails. This fourth, and hopefully final, major version
       <h3>Bug fixes</h3>
       <h4>Login Changes</h4>
       <p>We've had a great deal of confusion surrounding login names, and have switched over to using email to login, which is more intuitive for most than using their entire school's name. Your login will now be your chapters.ssdp.org email address (if you don't know what it is, ask your Outreach Coordinator). Passwords have not been changed in CAT v4 launch</p>
@@ -26,14 +26,14 @@
       <p>The CAT v4 was built using the Devise gem for user authentication and authorization. In the past, we built our own auth system from scratch, and hadn't included the ability to change passwords. Devise comes with this functionality built in, and you can now send an email to yourself to reset your password.</p>
       <p>To reset your password:</p>
       <ol>
-        <li>Go to https://cat.ssdp.org/users/sign_in</li>
+        <li>Go to <a href="https://cat.ssdp.org/users/sign_in">https://cat.ssdp.org/users/sign_in</a></li>
         <li>Click "Forgot your password"</li>
         <li>Enter your CAT email address and click "Send me reset password instructions"</li>
         <li>Click on the "change my password" link in your email - it should have come from tyler.williams@ssdp.org</li>
         <li>Enter your new password and confirm</li>
       </ol>
       <h4>Pagination on Chapters List</h4>
-      <p>The chapters list at https://cat.ssdp.org/chapters now paginates with 10 chapters per page</p>
+      <p>The chapters list at <a href="https://cat.ssdp.org/chapters">"https://cat.ssdp.org/chapters</a> now paginates with 10 chapters per page</p>
       <h4>Activity Reports for Staff</h4>
       <p>Each chapter page now has a "follow" button. Currently, all users can follow any other user, but only staff will receive reports. Staff reports can be mailed daily or weekly, and will include all actions taken by the chapters they follow.</p>
       <p>Want to report a bug or contribute? <a href="https://github.com/SSDP-Dev/chapter-activity-tracker" target="_blank" rel="noopener noreferrer">Find the CAT on GitHub!</a></p>

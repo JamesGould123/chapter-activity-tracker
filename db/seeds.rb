@@ -517,8 +517,74 @@ spendings.each do |spending|
 end
 
 
+# Hardcode reports for staffers, assuming staff IDs go from 1 - 10
+# Betty
 Report.create!(
                    chapter_universe: "all",
                    task_universe:    "all",
-                   time_window:      "daily"
+                   time_window:      "daily",
+                   staffer_id: 2
+)
+# Stacia
+Report.create!(
+                   chapter_universe: "all",
+                   task_universe:    "all",
+                   time_window:      "daily",
+                   staffer_id: 3
+)
+# Lauren
+Report.create!(
+                   chapter_universe: "all",
+                   task_universe:    "all",
+                   time_window:      "daily",
+                   staffer_id: 4
+)
+# Rachel
+Report.create!(
+                   chapter_universe: "all",
+                   task_universe:    "all",
+                   time_window:      "daily",
+                   staffer_id: 5
+)
+# Jake
+Report.create!(
+                   chapter_universe: "all",
+                   task_universe:    "all",
+                   time_window:      "daily",
+                   staffer_id: 6
+)
+#Elise
+Report.create!(
+                   chapter_universe: "all",
+                   task_universe:    "all",
+                   time_window:      "daily",
+                   staffer_id: 7
+)
+# Luis
+Report.create!(
+                   chapter_universe: "all",
+                   task_universe:    "all",
+                   time_window:      "daily",
+                   staffer_id: 8
+)
+# Hannah
+Report.create!(
+                   chapter_universe: "all",
+                   task_universe:    "all",
+                   time_window:      "daily",
+                   staffer_id: 9
+)
+# Vilmarie
+Report.create!(
+                   chapter_universe: "all",
+                   task_universe:    "all",
+                   time_window:      "daily",
+                   staffer_id: 10
+)
+# Nick
+Report.create!(
+                   chapter_universe: "all",
+                   task_universe:    "all",
+                   time_window:      "daily",
+                   staffer_id: 11
 )

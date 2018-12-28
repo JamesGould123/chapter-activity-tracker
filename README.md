@@ -81,7 +81,7 @@ In the 2017-2018 program year, Tyler Williams rebuilt the CAT using the Flask mi
 
 CAT v3, built with Flask, still suffered from some customization issues. It was built from the ground up and some fundamental architecture made the codebase difficult to read and maintain, without any real convention.
 
-Enter CAT v4.0.0 - rebuilt in Rails, the Rails Way. This fourth, and hopefully final, major version
+Enter CAT v4.0.0 - rebuilt in Rails. This fourth, and hopefully final, major version
 
 ##### Bug fixes
 
