@@ -81,7 +81,7 @@ In the 2017-2018 program year, Tyler Williams rebuilt the CAT using the Flask mi
 
 CAT v3, built with Flask, still suffered from some customization issues. It was built from the ground up and some fundamental architecture made the codebase difficult to read and maintain, without any real convention.
 
-Enter CAT v4.0.0 - rebuilt in Rails, the Rails Way. This fourth, and hopefully final major version
+Enter CAT v4.0.0 - rebuilt in Rails, the Rails Way. This fourth, and hopefully final, major version
 ##### Bug fixes
 
 ###### Login Changes
@@ -92,9 +92,9 @@ We've had a great deal of confusion surrounding login names, and have switched o
 
 We've been aware of a number of point tracking bugs for a long time. These included things like:
 
-    - Incorrect point counts
-    - Spending points increased total point counts instead of detracting
-    - Four digit point counts didn't render correctly in the chapter views
+- Incorrect point counts
+- Spending points increased total point counts instead of detracting
+- Four digit point counts didn't render correctly in the chapter views
 
 All of these point tracking bug should be fixed.
 
@@ -110,11 +110,11 @@ The CAT v4 was built using the Devise gem for user authentication and authorizat
 
 To reset your password:
 
-    1. Go to https://cat.ssdp.org/users/sign_in
-    2. Click "Forgot your password"
-    3. Enter your CAT email address and click "Send me reset password instructions"
-    4. Click on the "change my password" link in your email - it should have come from tyler.williams@ssdp.org
-    5. Enter your new password and confirm
+1. Go to https://cat.ssdp.org/users/sign_in
+2. Click "Forgot your password"
+3. Enter your CAT email address and click "Send me reset password instructions"
+4. Click on the "change my password" link in your email - it should have come from tyler.williams@ssdp.org
+5. Enter your new password and confirm
 
 ###### Pagination on Chapters List
 
