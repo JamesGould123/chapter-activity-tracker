@@ -8,4 +8,7 @@ before_action :authenticate_user!, only: [:control_panel]
 
   def control_panel
   end
+
+  def release_notes
+  end
 end
