@@ -67,8 +67,9 @@ Each first decimal place will trigger a reset of the second. So if we were on ve
 
 ## Release Notes 
 
-<h1>CAT v4.0.0</h1>
-    <h2>1/1/19</h2>
+### CAT v4.0.0 
+
+#### 1/1/19
     <p>We're very excited to release the fourth and most stable version of the Chapter Activity Tracker. This web app has come a long way from its initial conception and implementation.</p>
     <p>The first iteration of the CAT was a WordPress theme, built by Drew Stromberg. In the earliest implementation, we used posts, comments, and categories native to the WordPress platform to track points. It was a quick solution needed during rapid development, and worked well for a year or so.</p>
     <p>In the summer of 2016, Drew converted the CAT WordPress theme into a Drupal installation, complete with a content schema and new front end theme. Drupal solved back-end problems, and allowed us to more easily track statistics and report on data to our stakeholders, but the platform still had plenty of limitations.</p>
