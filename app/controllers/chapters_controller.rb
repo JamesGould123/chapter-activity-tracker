@@ -56,6 +56,8 @@ class ChaptersController < ApplicationController
     @hq_pc = 0
     @hq_te = 0
     @hq = 0
+    # Init variable for how many chapters completed an action this week
+    @last_week = 0
 
     @actions.each do |action|
       case Category.find(action.category_id).bucket_id
@@ -67,6 +69,14 @@ class ChaptersController < ApplicationController
         @te_points = @te_points + action.points
       end
     end
+
+    # Count how many chapters completed an action this week.
+    @users.each do |u|
+      if (ChapterAction.where("user_id = '#{u.id}'").where(:date_completed => Date.today.beginning_of_day-6..Date.today.end_of_day).count > 0)
+        @last_week+= 1
+      end
+    end
+
     @users.each do |u|
       if u.is_hq_cb?
         @hq_cb +=1
