@@ -56,6 +56,8 @@ class ChaptersController < ApplicationController
     @hq_pc = 0
     @hq_te = 0
     @hq = 0
+    # Initialize count at 0 for how many actions taken this week
+    @weekly_actions_taken = 0
 
     @actions.each do |action|
       case Category.find(action.category_id).bucket_id
@@ -65,6 +67,12 @@ class ChaptersController < ApplicationController
         @pc_points = @pc_points + action.points
       when 3
         @te_points = @te_points + action.points
+      end
+    end
+
+    @actions.each do |action|
+      if action.date_completed => Date.today-6..Date.today
+        @weekly_actions_taken += 1
       end
     end
     @users.each do |u|
