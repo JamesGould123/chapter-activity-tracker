@@ -8,9 +8,9 @@ Since launch, CATv3 has run into a ton of predictable problems which would be co
 
 So CATv4 will be a quick rebuild in Rails, and should be the final application moving forward.
 
-If you want to contribute, but don't know a single thing about web development, you can pretty easily get started with the [Michael Hartl Tutorial](https://www.railstutorial.org/) - which is free. 
+If you want to contribute, but don't know a single thing about web development, you can pretty easily get started with the [Michael Hartl Tutorial](https://www.railstutorial.org/) - which is free.
 
-Feel free to make pull requests against the development branch, I'll make sure things look good, and deploy. 
+Feel free to make pull requests against the development branch, I'll make sure things look good, and deploy.
 
 ## Index
 - [Heroku link](https://ssdp-cat.herokuapp.com/)
@@ -29,21 +29,21 @@ Feel free to make pull requests against the development branch, I'll make sure t
 
 ## Database creation
 
-The CAT is set up to use SQLite3 in development, and PostGres in production (for Heroku). So you shouldn't need to initialize anything outside of rails to get a local database working. Just run the migrations: 
+The CAT is set up to use SQLite3 in development, and PostGres in production (for Heroku). So you shouldn't need to initialize anything outside of rails to get a local database working. Just run the migrations:
 
 - `rails db:migrate`
 
 ## Database initialization
 
-The seed files come from the CAT v3 database as of 12/21/18.  This includes actions, spendings, and users. To populate the database with that data, run: 
+The seed files come from the CAT v3 database as of 12/21/18.  This includes actions, spendings, and users. To populate the database with that data, run:
 
 - `rails db:seed`
 
-However, if you're restoring the CAT or looking for updated content, you will need to get the database backups from Heroku. The heroku account is managed by Tyler Williams. Contact him through github or at [tyler@ogdenstudios.xyz] if you need deployment access. 
+However, if you're restoring the CAT or looking for updated content, you will need to get the database backups from Heroku. The heroku account is managed by Tyler Williams. Contact him through github or at [tyler@ogdenstudios.xyz] if you need deployment access.
 
 ## How to run the test suite
 
-There... are no working tests for CAT v4 as of now. 
+There... are no working tests for CAT v4 as of now.
 
 ## Services
 
@@ -51,23 +51,23 @@ There... are no working tests for CAT v4 as of now.
 
 ## Deployment instructions
 
-We deploy using heroku. The heroku account is managed by Tyler Williams. Contact him through github or at [tyler@ogdenstudios.xyz] if you need deployment access. 
+We deploy using heroku. The heroku account is managed by Tyler Williams. Contact him through github or at [tyler@ogdenstudios.xyz] if you need deployment access.
 
-## Versioning 
+## Versioning
 
-Unless any massive, earthshattering changes are made to the core rails app, any Ruby on Rails iteration of the CAT should be released as v4.x.x 
+Unless any massive, earthshattering changes are made to the core rails app, any Ruby on Rails iteration of the CAT should be released as v4.x.x
 
 The first decimal place will be for bug fixes or features that fix or enahnce the functionality or usability of the site in a major way: Fixing stats bugs, adding reporting functionalities, fixing major user issues, updating the UI in significant ways.
 
-The second decimal place will be for minor bug fixes and features: Copy changes, minor front end changes, small logic errors or weird user flows that can be solved easily. 
+The second decimal place will be for minor bug fixes and features: Copy changes, minor front end changes, small logic errors or weird user flows that can be solved easily.
 
-Issues and feature requests in the issue tracker will be labeled with minor or major to help determine versioning systems. 
+Issues and feature requests in the issue tracker will be labeled with minor or major to help determine versioning systems.
 
-Each first decimal place will trigger a reset of the second. So if we were on version 4.0.1 and released a major bug fix, the version would change to 4.1.0 and so on and so forth. 
+Each first decimal place will trigger a reset of the second. So if we were on version 4.0.1 and released a major bug fix, the version would change to 4.1.0 and so on and so forth.
 
-## Release Notes 
+## Release Notes
 
-### CAT v4.0.0 
+### CAT v4.0.0
 
 #### 1/1/19
 
@@ -82,11 +82,12 @@ In the 2017-2018 program year, Tyler Williams rebuilt the CAT using the Flask mi
 CAT v3, built with Flask, still suffered from some customization issues. It was built from the ground up and some fundamental architecture made the codebase difficult to read and maintain, without any real convention.
 
 Enter CAT v4.0.0 - rebuilt in Rails, the Rails Way. This fourth, and hopefully final, major version
+
 ##### Bug fixes
 
 ###### Login Changes
 
-We've had a great deal of confusion surrounding login names, and have switched over to using email to login, which is more intuitive for most than using their entire school's name. Your login will now be your chapters.ssdp.org email address (if you don't know what it is, ask your Outreach Coordinator). Passwords have not been changed in CAT v4 launch
+We've had a great deal of confusion surrounding login names, and have switched over to using email to login, which is more intuitive for most than using their entire school's name. Your login will now be your chapters.ssdp.org email address (if you don't know what it is, ask your Outreach Coordinator). Passwords have not been changed in CAT v4 launch.
 
 ###### Point tracking
 
@@ -126,4 +127,3 @@ Each chapter page now has a "follow" button. Currently, all users can follow any
 
 ##### Bug Reports
 Want to report a bug or contribute? <a href="https://github.com/SSDP-Dev/chapter-activity-tracker" target="_blank" rel="noopener noreferrer">Find the CAT on GitHub!</a>
-
