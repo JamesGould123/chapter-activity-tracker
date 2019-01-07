@@ -35,9 +35,7 @@ ActiveRecord::Schema.define(version: 20181026203644) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "category_id"
-    t.integer "bucket_id"
     t.datetime "date_completed"
-    t.index ["bucket_id"], name: "index_chapter_actions_on_bucket_id"
     t.index ["user_id"], name: "index_chapter_actions_on_user_id"
   end
 
