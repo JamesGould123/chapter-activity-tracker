@@ -1,8 +1,7 @@
 require 'will_paginate/array'
 class ChaptersController < ApplicationController
   def index
-    @search_value = params[:q]
-    @users = User.order("name ASC").where("permissions = 'chapter' AND name LIKE '%' || ? || '%'", params[:q]).paginate(:page =>params[:page], :per_page => 10)
+    @users = User.where("permissions = 'chapter'").paginate(:page =>params[:page], :per_page => 10)
   end
 
   def show
