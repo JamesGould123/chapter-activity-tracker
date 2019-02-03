@@ -1,6 +1,10 @@
 <div class="row">
   <div class="col">
     <h1>Chapters</h1>
+    <form class="cat-search-form">
+        <input type="text" placeholder="Search" name="q" value="<%= @search_value %>">
+        <input type="submit" />
+    </form>
     <%= will_paginate @users %>
     <% @users.each do |user| %>
       <% if user.permissions == "chapter" %>
