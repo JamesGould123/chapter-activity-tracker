@@ -69,7 +69,7 @@
               </td>
               <td>
                 <% if user_signed_in? %>
-                  <% if user_is_admin? || current_user.id == @user.id %>
+                  <% if user_is_admin? || current_user.permissions == "staffer" || current_user.id == @user.id %>
                     <%= link_to("Edit", chapter_action_path(:id => action.id)) %>
                   <% end %>
                 <% end %>
