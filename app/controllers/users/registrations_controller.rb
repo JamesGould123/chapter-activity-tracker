@@ -12,6 +12,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super
+    u = User.find_by(slug: params[:user][:slug])
+    u.update_column(:permissions, "chapter")
   end
 
   # GET /resource/edit
@@ -42,12 +44,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:slug])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:slug, :name])
   end
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_account_update_params
-    devise_parameter_sanitizer.permit(:account_update, keys: [ :slug])
+    devise_parameter_sanitizer.permit(:account_update, keys: [ :slug, :name])
   end
 
   # The path used after sign up.
