@@ -1,3 +1,27 @@
 // Place all the styles related to the ChapterActions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#activity-type-selector{
+    margin-bottom:0;
+}
+#activity-type-selector-options-container{
+     position:relative;
+     margin-bottom:20px;
+ }
+#activity-type-selector-options{
+      z-index:100;
+  }
+.activity-type-selector-option{
+     cursor:pointer;
+     background-color:#fff;
+     border:1px solid #ccc;
+     padding: 10px 20px;
+ }
+.activity-type-selector-option.active-option{
+     background-color: #ccc;
+ }
+@media (max-width : 480px) {
+     #activity-type-selector, #activity-type-selector-options-container{
+          display:none;
+      }
+}

@@ -12,7 +12,31 @@
   </div>
 <% end %>
 
-<%= select_tag(:category_id, options_for_select(@categories), :prompt => "Select an activity", :class => "form-control", :required=>"true") %>
+<input type="text" id="activity-type-selector" placeholder="Type activity here or use the dropdown"/>
+<div id="activity-type-selector-options-container">
+    <div id="activity-type-selector-options"></div>
+</div>
+
+<%= puts @chapter_building_categories.first() %>
+
+<select name="category_id" id="category_id" class="form-control" required="required">
+    <option value="">Select an activity</option>
+    <optgroup label="Chapter Building">
+        <% @chapter_building_categories.each do |category| %>
+            <option value="<%= category.id %>"><%= category.name %></option>
+        <% end %>
+    </optgroup>
+    <optgroup label="Policy Change">
+        <% @policy_change_categories.each do |category| %>
+            <option value="<%= category.id %>"><%= category.name %></option>
+        <% end %>
+    </optgroup>
+    <optgroup label="Training and Education">
+        <% @training_and_education_categories.each do |category| %>
+            <option value="<%= category.id %>"><%= category.name %></option>
+        <% end %>
+    </optgroup>
+</select>
 
 <% if user_is_chapter? %>
   <%= hidden_field_tag "user_id", value = current_user.id %>
@@ -39,3 +63,104 @@
   <%= form.submit :class => "form-control"%>
 </div>
 <% end %>
+
+<script>
+    $(document).ready(function(){
+    	var dropdown = $("#category_id");
+    	if(!dropdown.length){
+    		console.log("This code should only be running on the page for Create Activity.");
+    		return;
+    	}
+
+    	var options = {};
+    	dropdown.find("option").each(function(){
+    		var $this = $(this),
+                value = $this.attr("value");
+
+            if(value){
+	            options[value] = $this.text();
+            }
+    	});
+
+    	var typingBox = $("#activity-type-selector");
+    	var optionsContainer = $("#activity-type-selector-options");
+
+    	var enterCode = 13;
+    	var upKeyCode = 38;
+    	var downKeyCode = 40;
+
+    	typingBox.keyup(function(e){
+    		if(e.which === 38 || e.which === 40){
+    			var activeOption = $(".active-option");
+    			var newActiveOption = e.which === 38 ? activeOption.prev() : activeOption.next();
+    			if(!activeOption.length){
+    				$(".activity-type-selector-option").first().addClass("active-option");
+    			}
+    			else if(newActiveOption.length){
+    				activeOption.removeClass("active-option");
+    				newActiveOption.addClass("active-option");
+    			}
+    			return;
+    		}
+
+            var enterCode = 13;
+    		if(e.which === enterCode){
+    			var activeOption = $(".active-option");
+    			if(activeOption.length){
+    				submitOptionFromElement(activeOption);
+    				return false;
+    			}
+    		}
+
+    		var value = typingBox.val();
+    		if(value.length < 1){
+    			optionsContainer.empty();
+    			return;
+    		}
+
+    		var selectedItems = 0;
+    		optionsContainer.empty();
+    		for(var optionValue in options){
+    			var optionText = options[optionValue];
+    			if(typeof value === "string" && optionText.toLowerCase().indexOf(value.toLowerCase()) !== -1){
+    				if(selectedItems === 0){
+    					optionsContainer.append("<div class=\"activity-type-selector-option active-option\" data-value=\"" + optionValue + "\">" + optionText + "</div>");
+    				}
+    				else if (selectedItems > 4){
+    					optionsContainer.append("<div class=\"activity-type-selector-option\">...</div>");
+    					break;
+    				}
+    				else {
+    					optionsContainer.append("<div class=\"activity-type-selector-option\" data-value=\"" + optionValue + "\">" + optionText + "</div>");
+    				}
+    				selectedItems++;
+    			}
+    		}
+
+    		bindNewOptionsBtns();
+    	});
+
+    	var bindNewOptionsBtns = function(){
+    		var optionsButtons = $(".activity-type-selector-option");
+
+    		optionsButtons.mouseover(function(){
+    			optionsButtons.removeClass("active-option");
+    			$(this).addClass("active-option");
+    		});
+
+    		optionsButtons.click(function(){
+    			submitOptionFromElement($(this));
+    		});
+    	};
+
+    	var submitOptionFromElement = function(thisOption){
+    		var value = thisOption.data("value");
+    		if(!!value){
+    			console.log(typeof value);
+    			dropdown.val(value).trigger("change");
+    			optionsContainer.empty();
+    			typingBox.val("");
+    		}
+    	};
+    });
+</script>

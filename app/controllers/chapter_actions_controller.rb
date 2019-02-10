@@ -15,20 +15,29 @@ class ChapterActionsController < ApplicationController
   # GET /chapter_actions/new
   def new
     @chapter_action = ChapterAction.new
-    @categories = Category.all.map { |c| [c.name, c.id]}
+
+    @chapter_building_categories = Category.where("bucket_id=1").order("default_points DESC")
+    @policy_change_categories = Category.where("bucket_id=2").order("default_points DESC")
+    @training_and_education_categories = Category.where("bucket_id=3").order("default_points DESC")
+
     @users = User.all.map { |u| [u.name, u.id] }
   end
 
   # GET /chapter_actions/1/edit
   def edit
-    @categories = Category.all.map{|c| [ c.name, c.id ] }
+    @chapter_building_categories = Category.where("bucket_id=1").order("default_points DESC")
+    @policy_change_categories = Category.where("bucket_id=2").order("default_points DESC")
+    @training_and_education_categories = Category.where("bucket_id=3").order("default_points DESC")
+
     @users = User.all.map { |u| [u.name, u.id] }
   end
 
   # POST /chapter_actions
   # POST /chapter_actions.json
   def create
-    @categories = Category.all.map{|c| [ c.name, c.id ] }
+    @chapter_building_categories = Category.where("bucket_id=1").order("default_points DESC")
+    @policy_change_categories = Category.where("bucket_id=2").order("default_points DESC")
+    @training_and_education_categories = Category.where("bucket_id=3").order("default_points DESC")
 
     @chapter_action = ChapterAction.new(chapter_action_params)
     @chapter_action.category_id = params[:category_id]
