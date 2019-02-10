@@ -4,9 +4,9 @@ class CategoriesController < ApplicationController
   # GET /categories
   # GET /categories.json
   def index
-    @chapter_building_categories = Category.where("bucket_id=1")
-    @policy_change_categories = Category.where("bucket_id=2")
-    @training_and_education_categories = Category.where("bucket_id=3")
+    @chapter_building_categories = Category.where("bucket_id=1").order("default_points DESC")
+    @policy_change_categories = Category.where("bucket_id=2").order("default_points DESC")
+    @training_and_education_categories = Category.where("bucket_id=3").order("default_points DESC")
   end
 
   # GET /categories/1
