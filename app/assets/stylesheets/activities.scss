@@ -1,0 +1,25 @@
+.activities-table{
+    display:block;
+
+    tr{
+        th, td{
+            border:1px solid #ccc;
+            padding:10px 15px;
+            font-size:13px;
+            &:nth-child(1){
+                width:20%;
+                font-size:15px;
+            }
+            &:nth-child(2){
+                width:70%;
+            }
+            &:nth-child(3){
+                width:10%;
+                font-size:15px;
+            }
+        }
+        th, th:nth-child(n){
+            font-size:20px;
+        }
+    }
+}
